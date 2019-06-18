@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :promotion
     resources :cards, only: [:new, :create, :show, :edit, :update, :destroy]
   end
+  get '/dashboard', to: 'pages#dashboard'
 end
 
