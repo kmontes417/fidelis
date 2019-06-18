@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_104631) do
     t.bigint "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["shop_id"], name: "index_promotions_on_shop_id"
   end
 
