@@ -21,6 +21,14 @@
       </div>
     </div>
   </div>
+
+    <div>
+      <% @cards.each do |card| %>
+       <%= card.shop.user.first_name.capitalize %>
+      <%= card.star_count %>
+      <% end %>
+    </div>
+
 </div>
 
 

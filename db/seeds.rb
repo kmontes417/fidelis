@@ -20,11 +20,11 @@ federica = User.create!(first_name: "Federica", last_name: "Rossi", photo: "http
 
 
 
-andrea = User.create!(first_name: "Andrea", last_name: "Orlando", photo: "https://randomuser.me/api/portraits/men/86.jpg", email: "orlando@lewagon.com", password: "123456", qr: "")
-asia = User.create!(first_name: "Asia", last_name: "Pagano", photo: "https://randomuser.me/api/portraits/women/65.jpg", email: "pagano@lewagon.com", password: "123456", qr: "")
-gastone = User.create!(first_name: "Gastone", last_name: "Donati", photo: "https://randomuser.me/api/portraits/men/29.jpg", email: "donati@lewagon.com", password: "123456", qr: "")
-romeo = User.create!(first_name: "Romeo", last_name: "Basile", photo: "https://randomuser.me/api/portraits/men/31.jpg", email: "basile@lewagon.com", password: "123456", qr: "")
-rebecca = User.create!(first_name: "Rebecca", last_name: "Bernardi  ", photo: "https://randomuser.me/api/portraits/women/32.jpg", email: "bernardi@lewagon.com", password: "123456", qr: "")
+andrea = User.create!(first_name: "Andrea", last_name: "Orlando", photo: "https://randomuser.me/api/portraits/men/86.jpg", email: "andrea@lewagon.com", password: "123456", qr: "")
+asia = User.create!(first_name: "Asia", last_name: "Pagano", photo: "https://randomuser.me/api/portraits/women/65.jpg", email: "asia@lewagon.com", password: "123456", qr: "")
+gastone = User.create!(first_name: "Gastone", last_name: "Donati", photo: "https://randomuser.me/api/portraits/men/29.jpg", email: "gastone@lewagon.com", password: "123456", qr: "")
+romeo = User.create!(first_name: "Romeo", last_name: "Basile", photo: "https://randomuser.me/api/portraits/men/31.jpg", email: "romeo@lewagon.com", password: "123456", qr: "")
+rebecca = User.create!(first_name: "Rebecca", last_name: "Bernardi  ", photo: "https://randomuser.me/api/portraits/women/32.jpg", email: "rebecca@lewagon.com", password: "123456", qr: "")
 franca = User.create!(first_name: "Franca", last_name: "Carbone", photo: "https://randomuser.me/api/portraits/women/17.jpg", email: "franca@lewagon.com", password: "123456", qr: "")
 
 
