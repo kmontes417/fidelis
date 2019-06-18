@@ -1,4 +1,8 @@
 User.destroy_all
+Shop.destroy_all
+Card.destroy_all
+Promotion.destroy_all
+
 puts "Cleaning the database"
 puts  "Cleaned DB"
 
@@ -32,6 +36,6 @@ Card.create!(star_count: 10, status: "completed", shop_id: 5, user_id: 5)
 
 puts "Creating Promotion"
 
-Promotion.create!(name: "sconto pizza", description: "una pizza ti da due stampi", shop_id: 7)
-Promotion.create!(name: "2 gelati per 1", description: "compra un 2 gelati al prezzo di 1", shop_id: 1)
-Promotion.create!(name: "2 gelati per 1", description: "un gelato ti da 2 stampini", shop_id: 2)
+Promotion.create!(name: "pizza discount", description: "buy 1 pizza, get 2 stamps", shop_id: 7)
+Promotion.create!(name: "2 for 1 gelato", description: "buy 2 gelatos for the price of 1", shop_id: 1)
+Promotion.create!(name: "2 stamps for 1 gelato", description: "2 stamps per gelato", shop_id: 2)
