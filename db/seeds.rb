@@ -1,6 +1,12 @@
 User.destroy_all
+Shop.destroy_all
+Card.destroy_all
+Promotion.destroy_all
+
 puts "Cleaning the database"
 puts  "Cleaned DB"
+
+puts "Creating Shops"
 
 Shop.create!(Name:"Gelateria Duomo", Description:"Best gelato in Milan", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/Xpt4_HgZSjw")
 Shop.create!(Name:"Gelateria da Mario", Description:"Artisanal gelato ", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/alEZLDPPRBU")
@@ -20,3 +26,16 @@ User.create!(first_name: "Krystal", last_name: "Montolivo", remote_photo_url: "h
 User.create!(first_name: "Richard", last_name: "Totti", remote_photo_url: "https://kitt.lewagon.com/placeholder/users/richardhaenel", email: "richard@lewagon.com", password: "123456"),
 ]
 
+puts "Creating Cards"
+
+Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 1)
+Card.create!(star_count: 2, status: "pending", shop_id: 3, user_id: 2)
+Card.create!(star_count: 10, status: "completed", shop_id: 3, user_id: 3)
+Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 4)
+Card.create!(star_count: 10, status: "completed", shop_id: 5, user_id: 5)
+
+puts "Creating Promotion"
+
+Promotion.create!(name: "pizza discount", description: "buy 1 pizza, get 2 stamps", shop_id: 7)
+Promotion.create!(name: "2 for 1 gelato", description: "buy 2 gelatos for the price of 1", shop_id: 1)
+Promotion.create!(name: "2 stamps for 1 gelato", description: "2 stamps per gelato", shop_id: 2)
