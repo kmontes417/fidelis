@@ -2,50 +2,39 @@ class CardsController < ApplicationController
   def show
   end
 
-  def new
-    @shop = Shop.find(params[:shop_id])
-    @card = Card.new
-  end
-
   def create
-    @card = Card.new
-    @card.shop_id = params[:shop_id]
-    @card.user = current_user
-    if @card.save
-      redirect_to dashboard_path
-    else
-      render :new
-    end
-  end
-
-  def edit
-    @card = Card.find(params[:id])
+    @user = User.find(params[:user_id])
+    @shop = Shop.find(current_user.shop_id)
+    @card = Card.new(@user, @shop)
+    @card.save
+    redirect_to root_path
   end
 
   def update
-    if @card.update(card_params)
-      redirect_to dashboard_path
-    else
-      render :edit
-    end
+    @user = User.find(params[:user_id])
+    @shop = Shop.find(current_user.shop_id)
+    @card = Card.find(@user, @shop)
+
+    @card.update(star_count[params[:star_count] + @card.star_count])
+    redirect_to root_path
   end
 
   def destroy
     @card = Card.find params[:id]
     @card.destroy
-    redirect_to dashboard_path
+    redirect_to root_path
   end
 
-  def confirm
-    @card = Card.find params[:id]
-    @card.status = "confirmed"
-    @card.save
-    redirect_to dashboard_path
+  def complete
+    @card = Card.find(params[:id])
+    if @card.status == "completed"
+      render :new
+    end
   end
 
   private
 
   def card_params
-    params.require(:card).permit(:checkin)
+    params.require(:card).permit(:star_count, :status)
   end
 end
