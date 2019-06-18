@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_130220) do
+ActiveRecord::Schema.define(version: 2019_06_18_153212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2019_06_18_130220) do
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_cards_on_shop_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "promotions", force: :cascade do |t|
@@ -44,9 +50,10 @@ ActiveRecord::Schema.define(version: 2019_06_18_130220) do
     t.integer "max_stars", default: 10
     t.string "address"
     t.string "photo"
-    t.string "category"
     t.float "latitude"
     t.float "longitude"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_shops_on_category_id"
     t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
@@ -69,5 +76,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_130220) do
   add_foreign_key "cards", "shops"
   add_foreign_key "cards", "users"
   add_foreign_key "promotions", "shops"
+  add_foreign_key "shops", "categories"
   add_foreign_key "shops", "users"
 end
