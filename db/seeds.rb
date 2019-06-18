@@ -8,13 +8,12 @@ puts  "Cleaned DB"
 
 puts "Creating Shops"
 
-Shop.create!(Name:"Gelateria Duomo", Description:"Best gelato in Milan", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/Xpt4_HgZSjw")
-Shop.create!(Name:"Gelateria da Mario", Description:"Artisanal gelato ", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/alEZLDPPRBU")
-Shop.create!(Name:"Pizzeria da Luca", Description:"Authentic Pizza from Naple", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/22Vt7JIf7ZI")
-Shop.create!(Name:"Milan Barber", Description:"Quality Barber", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/IvQeAVeJULw")
-Shop.create!(Name:"Gelateria Ambrogio", Description:"Gelato made with love", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/8beTH4VkhLI")
-Shop.create!(Name:"Osteria Sora Loci", Description:"Best local cuisine", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/AvLo-ZG6fVY")
-Shop.create!(Name:"Pizzeria Baggio", Description:"Great Price-Quality", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/IODFFLZyDlI")
+Shop.create!(name:"Gelateria Duomo", description:"Best gelato in Milan", max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/Xpt4_HgZSjw", category: "gelateria", address: "Via Giovanni Boccaccio, 9, Milan")
+Shop.create!(name:"Gelateria da Mario", description:"Artisanal gelato ", max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/alEZLDPPRBU", category: "gelateria", address:"Via Mercato, 20, Milan")
+Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naple", max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/22Vt7JIf7ZI", category: "pizzeria", address:"Via Edmondo de Amicis, 22, Milan")
+Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/8beTH4VkhLI", category: "gelateria", address:"Via Spadari, 13, Milan")
+Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/AvLo-ZG6fVY", category: "osteria", address:"Via Tortona, 3, Milan")
+Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/IODFFLZyDlI", category: "pizzeria", address:"Via Giovanni Gherardini, Milan")
 
 puts "Creating User seeds"
 
