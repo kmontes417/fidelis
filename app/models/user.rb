@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :cards
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  after_create :create_qr
+
+  private
+
+  def create_qr
+    self.qr = RQRCode::QRCode.new("http://github.com/#{self.id}")
+  end
 end
