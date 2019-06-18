@@ -14,13 +14,12 @@ User.create!(first_name: "Federica", last_name: "Rossi", remote_photo_url: "http
 
 
 
-Shop.create!(Name:"Gelateria Duomo", Description:"Best gelato in Milan", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/Xpt4_HgZSjw")
-Shop.create!(Name:"Gelateria da Mario", Description:"Artisanal gelato ", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/alEZLDPPRBU")
-Shop.create!(Name:"Pizzeria da Luca", Description:"Authentic Pizza from Naple", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/22Vt7JIf7ZI")
-Shop.create!(Name:"Milan Barber", Description:"Quality Barber", Max_stars:10, user: OWNER.sample, Photo: "https://unsplash.com/photos/IvQeAVeJULw")
-Shop.create!(Name:"Gelateria Ambrogio", Description:"Gelato made with love", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/8beTH4VkhLI")
-Shop.create!(Name:"Osteria Sora Loci", Description:"Best local cuisine", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/AvLo-ZG6fVY")
-Shop.create!(Name:"Pizzeria Baggio", Description:"Great Price-Quality", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/IODFFLZyDlI")
+Shop.create!(Name:"Gelateria Duomo", Description:"Best gelato in Milan", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/Xpt4_HgZSjw", category: "gelateria")
+Shop.create!(Name:"Gelateria da Mario", Description:"Artisanal gelato ", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/alEZLDPPRBU", category: "gelateria")
+Shop.create!(Name:"Pizzeria da Luca", Description:"Authentic Pizza from Naple", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/22Vt7JIf7ZI", category: "pizzeria")
+Shop.create!(Name:"Gelateria Ambrogio", Description:"Gelato made with love", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/8beTH4VkhLI", category: "gelateria")
+Shop.create!(Name:"Osteria Sora Loci", Description:"Best local cuisine", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/AvLo-ZG6fVY", category: "osteria")
+Shop.create!(Name:"Pizzeria Baggio", Description:"Great Price-Quality", Max_stars:10, user: OWNERS.sample, Photo: "https://unsplash.com/photos/IODFFLZyDlI", category: "pizzeria")
 
 puts "Creating User seeds"
 
