@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :shops, only: [:index, :show] do
     resources :promotion
     resources :cards, only: [:new, :create, :show, :edit, :update, :destroy]
+    get '/qr/:id', to: 'pages#add_stamp'
   end
 end
 

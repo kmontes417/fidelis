@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def add_stamp
+  end
+
 end

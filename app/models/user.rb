@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :shops
@@ -13,6 +11,13 @@ class User < ApplicationRecord
   private
 
   def create_qr
-    self.qr = RQRCode::QRCode.new("http://github.com/#{self.id}")
+    self.qr = RQRCode::QRCode.new("#{domain}/qr/#{self.id}").as_svg
+    self.save
+  end
+
+  def domain
+    return 'www.fidelis.site' if Rails.env == "production"
+
+    'localhost:3000'
   end
 end
