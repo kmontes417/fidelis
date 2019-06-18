@@ -20,3 +20,9 @@ User.create!(first_name: "Krystal", last_name: "Montolivo", remote_photo_url: "h
 User.create!(first_name: "Richard", last_name: "Totti", remote_photo_url: "https://kitt.lewagon.com/placeholder/users/richardhaenel", email: "richard@lewagon.com", password: "123456"),
 ]
 
+Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 1)
+Card.create!(star_count: 2, status: "pending", shop_id: 3, user_id: 2)
+Card.create!(star_count: 10, status: "confirmed", shop_id: 3, user_id: 3)
+Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 4)
+
+Promotion.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 4)
