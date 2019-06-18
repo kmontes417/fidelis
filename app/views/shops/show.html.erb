@@ -21,33 +21,6 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-
-        <h2>Loyalty Card</h2>
-        <% @cards.each do |card| %>
-
-        <div>
-          <div class="shop-info">
-            <img src='<%=card.shop.user.photo%>' alt="user" class="avatar">
-            <div class="card-user">
-              <p>
-                <small><%= card.shop.user.first_name.capitalize %></small>
-              </p>
-            </div>
-
-          </div>
-
-          <div class="card-description">
-            <p><%= card.description %></p>
-          </div>
-        </div>
-        <% end %>
-
-    </div>
-
-  </div>
 </div>
 
 

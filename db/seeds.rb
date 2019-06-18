@@ -20,12 +20,12 @@ federica = User.create!(first_name: "Federica", last_name: "Rossi", photo: "http
 
 
 
-User.create!(first_name: "Andrea", last_name: "Orlando", photo: "https://randomuser.me/api/portraits/men/86.jpg", email: "orlando@lewagon.com", password: "123456", qr: "")
-User.create!(first_name: "Asia", last_name: "Pagano", photo: "https://randomuser.me/api/portraits/women/65.jpg", email: "pagano@lewagon.com", password: "123456", qr: "")
-User.create!(first_name: "Gastone", last_name: "Donati", photo: "https://randomuser.me/api/portraits/men/29.jpg", email: "donati@lewagon.com", password: "123456", qr: "")
-User.create!(first_name: "Romeo", last_name: "Basile", photo: "https://randomuser.me/api/portraits/men/31.jpg", email: "basile@lewagon.com", password: "123456", qr: "")
-User.create!(first_name: "Rebecca", last_name: "Bernardi  ", photo: "https://randomuser.me/api/portraits/women/32.jpg", email: "bernardi@lewagon.com", password: "123456", qr: "")
-User.create!(first_name: "Franca", last_name: "Carbone", photo: "https://randomuser.me/api/portraits/women/17.jpg", email: "franca@lewagon.com", password: "123456", qr: "")
+andrea = User.create!(first_name: "Andrea", last_name: "Orlando", photo: "https://randomuser.me/api/portraits/men/86.jpg", email: "orlando@lewagon.com", password: "123456", qr: "")
+asia = User.create!(first_name: "Asia", last_name: "Pagano", photo: "https://randomuser.me/api/portraits/women/65.jpg", email: "pagano@lewagon.com", password: "123456", qr: "")
+gastone = User.create!(first_name: "Gastone", last_name: "Donati", photo: "https://randomuser.me/api/portraits/men/29.jpg", email: "donati@lewagon.com", password: "123456", qr: "")
+romeo = User.create!(first_name: "Romeo", last_name: "Basile", photo: "https://randomuser.me/api/portraits/men/31.jpg", email: "basile@lewagon.com", password: "123456", qr: "")
+rebecca = User.create!(first_name: "Rebecca", last_name: "Bernardi  ", photo: "https://randomuser.me/api/portraits/women/32.jpg", email: "bernardi@lewagon.com", password: "123456", qr: "")
+franca = User.create!(first_name: "Franca", last_name: "Carbone", photo: "https://randomuser.me/api/portraits/women/17.jpg", email: "franca@lewagon.com", password: "123456", qr: "")
 
 
 
@@ -42,11 +42,11 @@ Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", user: fe
 
 puts "Creating Cards"
 
-Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 1)
-Card.create!(star_count: 2, status: "pending", shop_id: 3, user_id: 2)
-Card.create!(star_count: 10, status: "completed", shop_id: 3, user_id: 3)
-Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 4)
-Card.create!(star_count: 10, status: "completed", shop_id: 5, user_id: 5)
+Card.create!(star_count: 5, status: "pending", shop_id: 2, user: andrea)
+Card.create!(star_count: 2, status: "pending", shop_id: 3, user: asia)
+Card.create!(star_count: 10, status: "completed", shop_id: 3, user: gastone)
+Card.create!(star_count: 5, status: "pending", shop_id: 2, user: romeo)
+Card.create!(star_count: 10, status: "completed", shop_id: 5, user: rebecca)
 
 puts "Creating Promotion"
 
