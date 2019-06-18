@@ -8,6 +8,7 @@ puts  "Cleaned DB"
 
 
 OWNERS = [
+
 User.create!(first_name: "Lucia", last_name: "Ferrara", photo: "https://randomuser.me/api/portraits/women/43.jpg", email: "alessio@lewagon.com", password: "123456"),
 User.create!(first_name: "Alessandro", last_name: "Villa", photo: "https://randomuser.me/api/portraits/men/22.jpg", email: "pietro@lewagon.com", password: "123456"),
 User.create!(first_name: "Giuseppe", last_name: "Colombo", photo: "https://randomuser.me/api/portraits/men/47.jpg", email: "luigi@lewagon.com", password: "123456"),
@@ -20,12 +21,12 @@ User.create!(first_name: "Federica", last_name: "Rossi", photo: "https://randomu
 puts "Creating Shops"
 
 
-Shop.create!(name:"Gelateria Duomo", description:"Best gelato in Milan", max_stars:10, user: OWNERS.sample, photo: "https://unsplash.com/photos/Xpt4_HgZSjw", category: "gelateria", address: "Via Giovanni Boccaccio, 9, Milan")
-Shop.create!(name:"Gelateria da Mario", description:"Artisanal gelato ", max_stars:10, user: OWNERS.sample, photo: "https://unsplash.com/photos/alEZLDPPRBU", category: "gelateria", address:"Via Mercato, 20, Milan")
-Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naple", max_stars:10, user: OWNERS.sample, photo: "https://unsplash.com/photos/22Vt7JIf7ZI", category: "pizzeria", address:"Via Edmondo de Amicis, 22, Milan")
-Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", max_stars:10, user: OWNERS.sample, photo: "https://unsplash.com/photos/8beTH4VkhLI", category: "gelateria", address:"Via Spadari, 13, Milan")
-Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", max_stars:10, user: OWNERS.sample, photo: "https://unsplash.com/photos/AvLo-ZG6fVY", category: "osteria", address:"Via Tortona, 3, Milan")
-Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", max_stars:10, user: OWNERS.sample, photo: "https://unsplash.com/photos/IODFFLZyDlI", category: "pizzeria", address:"Via Giovanni Gherardini, Milan")
+Shop.create!(name:"Gelateria Duomo", description:"Best gelato in Milan", user: OWNERS.sample, photo: "https://unsplash.com/photos/Xpt4_HgZSjw", category: "gelateria", address: "Via Giovanni Boccaccio, 9, Milan")
+Shop.create!(name:"Gelateria da Mario", description:"Artisanal gelato ", user: OWNERS.sample, photo: "https://unsplash.com/photos/alEZLDPPRBU", category: "gelateria", address:"Via Mercato, 20, Milan")
+Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naple", user: OWNERS.sample, photo: "https://unsplash.com/photos/22Vt7JIf7ZI", category: "pizzeria", address:"Via Edmondo de Amicis, 22, Milan")
+Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", user: OWNERS.sample, photo: "https://unsplash.com/photos/8beTH4VkhLI", category: "gelateria", address:"Via Spadari, 13, Milan")
+Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", user: OWNERS.sample, photo: "https://unsplash.com/photos/AvLo-ZG6fVY", category: "osteria", address:"Via Tortona, 3, Milan")
+Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", user: OWNERS.sample, photo: "https://unsplash.com/photos/IODFFLZyDlI", category: "pizzeria", address:"Via Giovanni Gherardini, Milan")
 
 
 puts "Creating Cards"
