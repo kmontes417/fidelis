@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_06_18_121546) do
-=======
-ActiveRecord::Schema.define(version: 2019_06_18_104631) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,12 +44,9 @@ ActiveRecord::Schema.define(version: 2019_06_18_104631) do
     t.integer "max_stars", default: 10
     t.string "address"
     t.string "photo"
-<<<<<<< HEAD
     t.float "latitude"
     t.float "longitude"
-=======
     t.string "category"
->>>>>>> master
     t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
