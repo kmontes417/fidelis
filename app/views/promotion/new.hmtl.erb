@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+      <h3>Add a promotion</h3>
+      <%= simple_form_for [@shop, @promotion] do |f| %>
+      <%= f.input :name, label: "Name your promotion" %>
+      <%= f.input :description, label: "What do you want to promote?" %>
+      <%= f.submit "Create your promotion", class: "promotion-btn"%>
+      <% end %>
+    </div>
+  </div>
+</div>
