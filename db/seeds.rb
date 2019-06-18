@@ -9,15 +9,15 @@ puts  "Cleaned DB"
 
 puts "Creating Users"
 
-OWNERS = [
-User.create!(first_name: "Lucia", last_name: "Ferrara", photo: "https://randomuser.me/api/portraits/women/43.jpg", email: "lucia@lewagon.com", password: "123456", qr: ""),
-User.create!(first_name: "Alessandro", last_name: "Villa", photo: "https://randomuser.me/api/portraits/men/22.jpg", email: "alessandro@lewagon.com", password: "123456", qr: ""),
-User.create!(first_name: "Giuseppe", last_name: "Colombo", photo: "https://randomuser.me/api/portraits/men/47.jpg", email: "giuseppe@lewagon.com", password: "123456", qr: ""),
-User.create!(first_name: "Sofia", last_name: "Bianchi", photo: "https://randomuser.me/api/portraits/women/10.jpg", email: "sofia@lewagon.com", password: "123456", qr: ""),
-User.create!(first_name: "Agnese", last_name: "Costa", photo: "https://randomuser.me/api/portraits/women/62.jpg", email: "agnese@lewagon.com", password: "123456", qr: ""),
-User.create!(first_name: "Salvatore", last_name: "Esposito", photo: "https://randomuser.me/api/portraits/men/4.jpg", email: "salvatore@lewagon.com", password: "123456", qr: ""),
+# OWNERS
+User.create!(first_name: "Lucia", last_name: "Ferrara", photo: "https://randomuser.me/api/portraits/women/43.jpg", email: "lucia@lewagon.com", password: "123456", qr: "")
+User.create!(first_name: "Alessandro", last_name: "Villa", photo: "https://randomuser.me/api/portraits/men/22.jpg", email: "alessandro@lewagon.com", password: "123456", qr: "")
+User.create!(first_name: "Giuseppe", last_name: "Colombo", photo: "https://randomuser.me/api/portraits/men/47.jpg", email: "giuseppe@lewagon.com", password: "123456", qr: "")
+User.create!(first_name: "Sofia", last_name: "Bianchi", photo: "https://randomuser.me/api/portraits/women/10.jpg", email: "sofia@lewagon.com", password: "123456", qr: "")
+User.create!(first_name: "Agnese", last_name: "Costa", photo: "https://randomuser.me/api/portraits/women/62.jpg", email: "agnese@lewagon.com", password: "123456", qr: "")
+User.create!(first_name: "Salvatore", last_name: "Esposito", photo: "https://randomuser.me/api/portraits/men/4.jpg", email: "salvatore@lewagon.com", password: "123456", qr: "")
 User.create!(first_name: "Federica", last_name: "Rossi", photo: "https://randomuser.me/api/portraits/women/79.jpg", email: "federica@lewagon.com", password: "123456", qr: "")
-]
+
 
 
 User.create!(first_name: "Andrea", last_name: "Orlando", photo: "https://randomuser.me/api/portraits/men/86.jpg", email: "orlando@lewagon.com", password: "123456", qr: "")

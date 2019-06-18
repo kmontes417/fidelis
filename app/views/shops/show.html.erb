@@ -1,5 +1,56 @@
+<!-- <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @shop.photo %>');">
+</div> -->
 
-<%= @shop.photo %>
-<%= @shop.name %>
-<%= @shop.description %>
-<%= @shop.category %>
+
+<div class="container justify-content-center" >
+  <%= @shop.photo %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="shop-wrapper">
+        <div class="shop-info">
+          <strong><h1><%= @shop.name %></h1></strong>
+          <p>Shop owner: <%= @shop.user.first_name.capitalize %> </p>
+          <p><%= @shop.category.capitalize %></p>
+          <p><%= @shop.address.capitalize %></p>
+        </div>
+
+        <div class="description mb-3">
+          <h2>Description</h2>
+          <p><%= @shop.description.capitalize %>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+        <h2>Loyalty Card</h2>
+        <% @cards.each do |card| %>
+
+        <div>
+          <div class="shop-info">
+            <img src='<%=card.shop.user.photo%>' alt="user" class="avatar">
+            <div class="card-user">
+              <p>
+                <small><%= card.shop.user.first_name.capitalize %></small>
+              </p>
+            </div>
+
+          </div>
+
+          <div class="card-description">
+            <p><%= card.description %></p>
+          </div>
+        </div>
+        <% end %>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
