@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div
   id="map"
   style="width: 100%;
@@ -6,11 +5,10 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-=======
+
 <% @shops.each do |shop| %>
   <%= shop.photo %>
   <%= shop.name %>
   <%= shop.description %>
   <%= shop.category %>
 <% end %>
->>>>>>> master
