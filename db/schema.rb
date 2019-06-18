@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_18_130220) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +46,8 @@ ActiveRecord::Schema.define(version: 2019_06_18_130220) do
     t.string "address"
     t.string "photo"
     t.string "category"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
