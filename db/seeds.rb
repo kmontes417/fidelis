@@ -24,5 +24,3 @@ Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 1)
 Card.create!(star_count: 2, status: "pending", shop_id: 3, user_id: 2)
 Card.create!(star_count: 10, status: "confirmed", shop_id: 3, user_id: 3)
 Card.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 4)
-
-Promotion.create!(star_count: 5, status: "pending", shop_id: 2, user_id: 4)
