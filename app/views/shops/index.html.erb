@@ -13,3 +13,14 @@
 <% end %>
 
  </ul>
+
+
+
+ <form action="shops">
+  <select name="category">
+  <% @categories.each do |category| %>
+    <option value="<%= category.name %>"><%= category.name %></option>
+  <% end %>
+   </select>
+   <input type="submit" value="Submit">
+</form>
