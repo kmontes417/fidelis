@@ -6,9 +6,10 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
+
+<ul>
 <% @shops.each do |shop| %>
-  <%= shop.photo %>
-  <%= shop.name %>
-  <%= shop.description %>
-  <%= shop.category %>
+ <li> <%= shop.name %> : <%= shop.description %></li>
 <% end %>
+
+ </ul>
