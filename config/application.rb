@@ -22,3 +22,8 @@ module Fidelis
     # the framework and any gems in your application.
   end
 end
+
+
+class Application < Rails::Application
+  config.active_job.queue_adapter = :sidekiq
+end

@@ -1,11 +1,15 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
+  require "sidekiq/web"
   devise_for :users
   root to: 'pages#home'
   resources :shops, only: [:index, :show] do
     resources :promotion
-    resources :cards, only: [:new, :create, :show, :edit, :update, :destroy]
-    get '/qr/:id', to: 'pages#add_stamp'
+    resources :cards, only: [:create, :update, :destroy]
   end
+  get '/qr/:id', to: 'pages#add_stamp'
   get '/dashboard', to: 'pages#dashboard'
-end
 
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+end
