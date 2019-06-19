@@ -14,5 +14,6 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find params[:id]
+    @cards = current_user.cards
   end
 end
