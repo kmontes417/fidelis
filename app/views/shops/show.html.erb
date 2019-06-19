@@ -26,7 +26,7 @@
 
   <div>
     <% @cards.each do |card| %>
-     <%= card.shop.user.first_name.capitalize %>
+     <%= card.user.first_name.capitalize %>
      <p>star count: <%= card.star_count %> </p>
     <div>
       <% card.star_count.times do %>
