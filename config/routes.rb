@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     get '/qr/:id', to: 'pages#add_stamp'
   end
   get '/dashboard', to: 'pages#dashboard'
+
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
 
