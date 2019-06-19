@@ -1,3 +1,5 @@
+<!-- shop show page -->
+
 <!-- <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @shop.photo %>');">
 </div> -->
 
@@ -7,34 +9,32 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="shop-wrapper">
-          <% @shops.each do |shop| %>
         <div class="shop-info">
           <strong><h1><%= @shop.name %></h1></strong>
           <p>Shop owner: <%= @shop.user.first_name.capitalize %> </p>
           <p><%= @shop.address.capitalize %></p>
+          <p><%= @shop.category.name %></p>
         </div>
 
         <div class="description mb-3">
           <h2>Description</h2>
           <p><%= @shop.description.capitalize %>.</p>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
 
+  <div>
+    <% @cards.each do |card| %>
+     <%= card.shop.user.first_name.capitalize %>
+     <p>star count: <%= card.star_count %> </p>
     <div>
-      <% @cards.each do |card| %>
-       <%= card.shop.user.first_name.capitalize %>
-      <%= card.star_count %>
+      <% card.star_count.times do %>
+        <i class="fa fa-star star" aria-hidden="true"></i>
       <% end %>
     </div>
-
-     <div>
-      <% @category.each do |category| %>
-       <%= category.shop.name %>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
 </div>
 
