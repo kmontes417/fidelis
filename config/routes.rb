@@ -9,7 +9,7 @@
   get '/qr/:id', to: 'pages#add_stamp'
   get '/dashboard', to: 'pages#dashboard'
 
-  authenticate :user do
+  authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
   end
 end
