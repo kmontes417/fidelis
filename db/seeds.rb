@@ -1,4 +1,4 @@
-tUser.destroy_all
+User.destroy_all
 Shop.destroy_all
 Card.destroy_all
 Promotion.destroy_all
