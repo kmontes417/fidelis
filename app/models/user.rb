@@ -6,18 +6,11 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  after_create :create_qr
+  after_create :async_qr
 
   private
 
-  def create_qr
-    self.qr = RQRCode::QRCode.new("#{domain}/qr/#{self.id}").as_svg
-    self.save
-  end
-
-  def domain
-    return 'www.fidelis.site' if Rails.env == "production"
-
-    'localhost:3000'
+  def async_qr
+    CreateQr.perform_later(self.id)
   end
 end
