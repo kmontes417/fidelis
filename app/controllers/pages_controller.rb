@@ -8,8 +8,18 @@ class PagesController < ApplicationController
   def dashboard
   end
 
+  def star_form
+    @card = Card.new
+    @scanned_user = params[:id]
+  end
+
   def add_stamp
-    UpdateCardService.call(params[:id], current_user.shop_id, 1)
-    redirect_to dashboard_path
+    UpdateCardService.new(params[:id], current_user.shop.id, params[:card][:star_count]).call
+  end
+
+  private
+
+  def star_params
+    params.require(:card).permit(:star_count, :id)
   end
 end
