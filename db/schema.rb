@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_153212) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.integer "star_count"
+    t.integer "star_count", default: 0
     t.string "status"
     t.bigint "shop_id"
     t.bigint "user_id"

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :shops, only: [:index, :show] do
     resources :promotion
-    resources :cards, only: [:create, :show, :update, :destroy]
+    resources :cards, only: [:new, :create, :show, :edit, :update, :destroy]
+    get '/qr/:id', to: 'pages#add_stamp'
   end
   get '/dashboard', to: 'pages#dashboard'
 end

@@ -7,5 +7,9 @@ class PagesController < ApplicationController
 
   def dashboard
   end
+
+  def add_stamp
+  end
+
 end
 
