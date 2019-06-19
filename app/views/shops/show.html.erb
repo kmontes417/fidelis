@@ -24,17 +24,17 @@
     </div>
   </div>
 
-  <div>
-    <% @cards.each do |card| %>
-     <%= card.user.first_name.capitalize %>
-     <p>star count: <%= card.star_count %> </p>
+  <% if @card.any? %>
     <div>
-      <% card.star_count.times do %>
-        <i class="fa fa-star star" aria-hidden="true"></i>
-      <% end %>
+       <%= @card.first.user.first_name.capitalize %>
+       <p>star count: <%= @card.first.star_count %> </p>
+      <div>
+        <% @card.first.star_count.times do %>
+          <i class="fa fa-star star" aria-hidden="true"></i>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 
 </div>
 
