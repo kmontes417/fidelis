@@ -21,5 +21,3 @@ class User < ApplicationRecord
     'localhost:3000'
   end
 end
-
-
