@@ -2,6 +2,7 @@ User.destroy_all
 Shop.destroy_all
 Card.destroy_all
 Promotion.destroy_all
+Category.destroy_all
 
 puts "Cleaning the database"
 puts  "Cleaned DB"
@@ -27,17 +28,22 @@ romeo = User.create!(first_name: "Romeo", last_name: "Basile", photo: "https://r
 rebecca = User.create!(first_name: "Rebecca", last_name: "Bernardi  ", photo: "https://randomuser.me/api/portraits/women/32.jpg", email: "rebecca@lewagon.com", password: "123456", qr: "")
 franca = User.create!(first_name: "Franca", last_name: "Carbone", photo: "https://randomuser.me/api/portraits/women/17.jpg", email: "franca@lewagon.com", password: "123456", qr: "")
 
+puts "Creating Categories"
+
+pizzeria = Category.create!(name: "Pizzeria")
+gelateria = Category.create!(name: "Gelateria")
+osteria = Category.create!(name: "Osteria")
 
 
 puts "Creating Shops"
 
 
-shop1 = Shop.create!(name:"Gelateria Duomo", description:"Best gelato in Milan", user: lucia, photo: "https://unsplash.com/photos/Xpt4_HgZSjw", category: "gelateria", address: "Via Giovanni Boccaccio, 9, Milan")
-shop2 = Shop.create!(name:"Gelateria da Mario", description:"Artisanal gelato ", user: alessandro, photo: "https://unsplash.com/photos/alEZLDPPRBU", category: "gelateria", address:"Via Mercato, 20, Milan")
-shop3 = Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naple", user: sofia, photo: "https://unsplash.com/photos/22Vt7JIf7ZI", category: "pizzeria", address:"Via Edmondo de Amicis, 22, Milan")
-shop4 = Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", user: agnese, photo: "https://unsplash.com/photos/8beTH4VkhLI", category: "gelateria", address:"Via Spadari, 13, Milan")
-shop5 = Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", user: salvatore, photo: "https://unsplash.com/photos/AvLo-ZG6fVY", category: "osteria", address:"Via Tortona, 3, Milan")
-shop6 = Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", user: federica, photo: "https://unsplash.com/photos/IODFFLZyDlI", category: "pizzeria", address:"Via Giovanni Gherardini, Milan")
+shop1 = Shop.create!(name:"Gelateria Duomo", description:"Best gelato in Milan", user: lucia, photo: "https://unsplash.com/photos/Xpt4_HgZSjw", category: gelateria, address: "Via Giovanni Boccaccio, 9, Milan")
+shop2 = Shop.create!(name:"Gelateria da Mario", description:"Artisanal gelato ", user: alessandro, photo: "https://unsplash.com/photos/alEZLDPPRBU", category: gelateria, address:"Via Mercato, 20, Milan")
+shop3 = Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naple", user: sofia, photo: "https://unsplash.com/photos/22Vt7JIf7ZI", category: pizzeria, address:"Via Edmondo de Amicis, 22, Milan")
+shop4 = Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", user: agnese, photo: "https://unsplash.com/photos/8beTH4VkhLI", category: gelateria, address:"Via Spadari, 13, Milan")
+shop5 = Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", user: salvatore, photo: "https://unsplash.com/photos/AvLo-ZG6fVY", category: osteria, address:"Via Tortona, 3, Milan")
+shop6 = Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", user: federica, photo: "https://unsplash.com/photos/IODFFLZyDlI", category: pizzeria, address:"Via Giovanni Gherardini, Milan")
 
 
 puts "Creating Cards"

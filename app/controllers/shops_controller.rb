@@ -1,8 +1,15 @@
 class ShopsController < ApplicationController
   def index
-    @shops = Shop.all
-    @shops = Shop.where.not(latitude: nil, longitude: nil)
+    # raise
+    if params[:category] == nil
+      @shops = Shop.all
+    else
+      @categories = Category.where(name: params[:category])
+      @shops = Shop.where(category: @categories)
+    end
 
+    @shops = @shops.where.not(latitude: nil, longitude: nil)
+    @categories = Category.all
     @markers = @shops.map do |shop|
       {
         lat: shop.latitude,

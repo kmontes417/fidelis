@@ -6,9 +6,21 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
+
+<ul>
 <% @shops.each do |shop| %>
-  <%= shop.photo %>
-  <%= shop.name %>
-  <%= shop.description %>
-  <%= shop.category %>
+ <li> <%= shop.name %> : <%= shop.description %></li>
 <% end %>
+
+ </ul>
+
+
+
+ <form action="shops">
+  <select name="category">
+  <% @categories.each do |category| %>
+    <option value="<%= category.name %>"><%= category.name %></option>
+  <% end %>
+   </select>
+   <input type="submit" value="Submit">
+</form>
