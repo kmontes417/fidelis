@@ -24,5 +24,10 @@ class ShopsController < ApplicationController
     @shop = Shop.find params[:id]
     @card = Card.where(shop: @shop, user: current_user, status: "pending")
     @promotions = Promotion.all
+    @marker = [{
+      lat: @shop.latitude,
+      lng: @shop.longitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { shop: @shop })
+    }]
   end
 end
