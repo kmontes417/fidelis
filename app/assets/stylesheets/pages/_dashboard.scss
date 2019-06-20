@@ -43,7 +43,16 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  // color: linear-gradient($parple, $blue);
+}
+
+h2 {
+  color: black;
+}
+
+#bottone {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 
