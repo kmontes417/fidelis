@@ -12,8 +12,18 @@ class PagesController < ApplicationController
     @shops = Shop.all
   end
 
-  def add_stamp
+  def star_form
+    @card = Card.new
+    @scanned_user = params[:id]
   end
 
-end
+  def add_stamp
+    UpdateCardService.new(params[:id], current_user.shop.id, params[:card][:star_count]).call
+  end
 
+  private
+
+  def star_params
+    params.require(:card).permit(:star_count, :id)
+  end
+end

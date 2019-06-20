@@ -24,18 +24,27 @@
     </div>
   </div>
 
-  <div>
-    <% @cards.each do |card| %>
-     <%= card.shop.user.first_name.capitalize %>
-     <p>star count: <%= card.star_count %> </p>
+  <% if @card.any? %>
     <div>
-      <% card.star_count.times do %>
-        <i class="fa fa-star star" aria-hidden="true"></i>
-      <% end %>
+       <%= @card.first.user.first_name.capitalize %>
+       <p>star count: <%= @card.first.star_count %> </p>
+      <div>
+        <% @card.first.star_count.times do %>
+          <i class="fa fa-star star" aria-hidden="true"></i>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+
 
 </div>
+
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @marker.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 
 
