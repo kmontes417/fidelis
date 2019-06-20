@@ -1,18 +1,29 @@
 <!-- _owner_dashboard.html.erb
  -->
+<div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
+</div>
+
 <h1> OWNER  DASHBOARD</h1>
 
-<p> button to scan QR code </p>
+<h2> button to scan QR code </h2>
 
-<p> button to create a promotion - render the promotion form </p>
-<p> card with store info </p>
+<div>
+<h2> button to create a promotion - render the promotion form </h2>
+<button type="button" class="btn btn-warning">
+<%= link_to "Add a promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
+</button>
 
-<p> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </p>
 
+<h2> card with store info </h2>
+<p>banner</p>
+
+
+<h2> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </h2>
   <div>
     <% @promotions.each do |promotion|  %>
     <p> Promotion name: <%= promotion.name %> </p>
     <p> Promotion description: <%= promotion.description %> </p>
     <% end %>
   </div>
+
 
