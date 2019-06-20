@@ -1,7 +1,58 @@
-<!-- _consumer_dashboard.html.erb
- -->
-<h1> CONSUMER  DASHBOARD</h1>
 
-<p> button to show QR code </p>
-<p>list of loyalty cards</p>
-<p>button to go to search in navbar (link to shops index)</p>
+<div class="d-flex">
+
+  <div class="cards-container-dashboard">
+    <% @shops.each do |shop| %>
+    <div>
+      <%= link_to shop_path(shop) do %>
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= shop.name %></h2>
+            <p>Number of stars: <%= @cards.first.star_count %> out of 10</p>
+          </div>
+          <img category icon>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <% end %>
+
+  </div>
+
+</div>
+<!-- Button trigger modal -->
+<div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="bottone">
+  QR
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Personal QR code</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= current_user.qr.html_safe%>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

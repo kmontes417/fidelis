@@ -1,5 +1,7 @@
+
 <!-- _owner_dashboard.html.erb
  -->
+
 <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
 </div>
 
@@ -19,11 +21,11 @@
 
 
 <h2> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </h2>
+
   <div>
     <% @promotions.each do |promotion|  %>
     <p> Promotion name: <%= promotion.name %> </p>
     <p> Promotion description: <%= promotion.description %> </p>
     <% end %>
   </div>
-
 
