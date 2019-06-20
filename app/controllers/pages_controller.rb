@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @promotions = Promotion.all
+    @cards = Card.all
+    @shops = Shop.all
   end
 
   def add_stamp
