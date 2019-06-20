@@ -1,5 +1,7 @@
+
 <!-- _owner_dashboard.html.erb
  -->
+
 <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
 </div>
 
@@ -16,6 +18,8 @@
 
 
 <strong><p> button to scan QR code </p></strong>
+<input type="file" accept="image/*" capture="camera">
+
 
 <div>
   <button type="button" class="btn btn-info">
@@ -24,6 +28,7 @@
 
 
 <p> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </p>
+
   <div>
     <% @promotions.each do |promotion|  %>
     <p> Promotion name: <%= promotion.name %> </p>
@@ -41,5 +46,4 @@
         </button>
     <% end %>
   </div>
-
 

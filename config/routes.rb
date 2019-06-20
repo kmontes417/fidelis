@@ -10,7 +10,10 @@
   post '/qr/:id/add', to: 'pages#add_stamp', as: 'stamp'
   get '/dashboard', to: 'pages#dashboard'
 
+  require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
   end
 end
+
+
