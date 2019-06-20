@@ -1,10 +1,14 @@
-<h1>This is the dashboard</h1>
-Name of User
+<div>
+  <% if @user.cards.exists? %>
+    <%= render 'consumer_dashboard' %>
+  <% else %>
+    <%= render 'owner_dashboard' %>
+  <% end %>
+</div>
 
-<!-- write logic -->
-<p> If SHOP OWNER, render _owner_dashboard.html.erb</p>
-<%= render 'shared/_owner_dashboard.html.erb' %>
+<div>
+  <p> Name: <%= @user.first_name %> </p>
+  <p>Loyal cards exists? <%= @user.cards.exists? %> </p>
+</div>
 
-<!-- write logic -->
-<p> If CONSUMER, render _consumer_dashboard.html.erb</p>
-<%= render 'shared/_owner_dashboard.html.erb' %>
+

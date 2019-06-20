@@ -1,9 +1,18 @@
 <!-- _owner_dashboard.html.erb
  -->
+<h1> OWNER  DASHBOARD</h1>
 
- <p> If SHOP OWNER, render _owner_dashboard.html.erb</p>
-<%= render 'shared/_owner_dashboard.html.erb' %>
-button to scan QR code
-button to create a promotion - render the promotion form
-card with store info
-list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial))
+<p> button to scan QR code </p>
+
+<p> button to create a promotion - render the promotion form </p>
+<p> card with store info </p>
+
+<p> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </p>
+
+  <div>
+    <% @promotions.each do |promotion|  %>
+    <p> Promotion name: <%= promotion.name %> </p>
+    <p> Promotion description: <%= promotion.description %> </p>
+    <% end %>
+  </div>
+

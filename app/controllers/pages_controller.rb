@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
+    @promotions = Promotion.all
   end
 
   def star_form

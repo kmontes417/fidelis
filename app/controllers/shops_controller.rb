@@ -22,5 +22,6 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find params[:id]
     @card = Card.where(shop: @shop, user: current_user, status: "pending")
+    @promotions = Promotion.all
   end
 end
