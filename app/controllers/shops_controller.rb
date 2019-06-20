@@ -17,6 +17,7 @@ class ShopsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { shop: shop })
       }
     end
+
   end
 
   def show
