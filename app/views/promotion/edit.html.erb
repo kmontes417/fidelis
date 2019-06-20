@@ -1,1 +1,12 @@
-<h1>Promotions</h1>
+<!-- edit.html.erb -->
+<div class="col-md-8">
+  <h1>Edit a promotion</h1>
+
+  <%= simple_form_for @promotion, :url => shop_promotion_path(@shop, @promotion), method: :patch do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: 'button btn-primary' %>
+  <% end %>
+</div>
+
+

@@ -10,7 +10,7 @@ class PromotionController < ApplicationController
     @promotion = Promotion.new(promotion_params)
     @promotion.shop = @shop
     if @promotion.save
-      redirect_to shop_path(@shop)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -18,11 +18,13 @@ class PromotionController < ApplicationController
 
   def edit
     @promotion = Promotion.find(params[:id])
+    @shop = current_user.shop
   end
 
   def update
+    @promotion = Promotion.find(params[:id])
     if @promotion.update(promotion_params)
-      redirect_to shop_path
+      redirect_to dashboard_path
     else
       render :edit
     end
@@ -31,7 +33,7 @@ class PromotionController < ApplicationController
   def destroy
     @promotion = Promotion.find params[:id]
     @promotion.destroy
-    redirect_to shop_path
+    redirect_to dashboard_path
   end
 
   private

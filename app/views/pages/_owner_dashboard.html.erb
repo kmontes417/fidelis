@@ -5,27 +5,45 @@
 <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
 </div>
 
-<h1> OWNER  DASHBOARD</h1>
-
-<h2> button to scan QR code </h2>
+<p> OWNER  DASHBOARD</p>
 
 <div>
-<h2> button to create a promotion - render the promotion form </h2>
-<button type="button" class="btn btn-warning">
-<%= link_to "Add a promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
+  <p> Your shop info:</p>
+  <p> Welcome <%= @user.first_name %>! </p>
+  <p> Name: <%= @user.shop.name %> </p>
+  <p> Address: <%= @user.shop.address %> </p>
+  <p> Category: <%= @user.shop.category.name %> </p>
+  <p> description: <%= @user.shop.description %> </p>
+</div>
+
+
+<strong><p> button to scan QR code </p></strong>
+<input type="file" accept="image/*" capture="camera">
+
+
+<div>
+  <button type="button" class="btn btn-info">
+  <%= link_to "Add a promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
 </button>
 
 
-<h2> card with store info </h2>
-<p>banner</p>
-
-
-<h2> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </h2>
+<p> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </p>
 
   <div>
     <% @promotions.each do |promotion|  %>
     <p> Promotion name: <%= promotion.name %> </p>
     <p> Promotion description: <%= promotion.description %> </p>
+    <div>
+    <button type="button" class="btn btn-success">
+      <%= link_to "Edit a promotion", edit_shop_promotion_path(@user.shop, promotion)%>
+    </button>
+    <button type="button" class="btn btn-warning">
+      <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
+    </button>
+     <button class="btn btn-danger text-white">
+        <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        </button>
     <% end %>
   </div>
 
