@@ -6,7 +6,8 @@
     resources :promotion
     resources :cards, only: [:create, :update, :destroy]
   end
-  get '/qr/:id', to: 'pages#add_stamp'
+  get '/qr/:id', to: 'pages#star_form', as: 'cards'
+  post '/qr/:id/add', to: 'pages#add_stamp', as: 'stamp'
   get '/dashboard', to: 'pages#dashboard'
 
   authenticate :user, lambda { |u| u.admin } do

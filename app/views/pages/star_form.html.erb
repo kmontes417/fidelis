@@ -1,0 +1,6 @@
+<%= simple_form_for @card, :url => stamp_path(@scanned_user) do |f| %>
+  <%= f.input :star_count, collection: 1..10 %>
+  <%= f.button :submit %>
+<% end %>
+
+
