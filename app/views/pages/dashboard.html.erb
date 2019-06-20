@@ -1,7 +1,16 @@
-<h1>This is the dashboard</h1>
 
+<div>
+  <% if @user.cards.exists? %>
+    <%= render 'consumer_dashboard' %>
+  <% else %>
+    <%= render 'owner_dashboard' %>
+  <% end %>
+</div>
 
+<div>
+  <p> Name: <%= @user.first_name %> </p>
+  <p>Loyal cards exists? <%= @user.cards.exists? %> </p>
+</div>
 
-<%= render 'pages/_consumer_dashboard.html.erb' %>
 
 
