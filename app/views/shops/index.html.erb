@@ -4,15 +4,15 @@
 
 
 
-
- <form action="shops">
+ <!--form code below, not sure if we gonna use it-->
+ <!-- <form action="shops">
   <select name="category">
   <% @categories.each do |category| %>
     <option value="<%= category.name %>"><%= category.name %></option>
   <% end %>
    </select>
    <input type="submit" value="Submit">
-</form>
+</form> -->
 
 <ul>
 <% @shops.each do |shop| %>
@@ -47,8 +47,6 @@
     </div>
   </div>
 </div>
-
-<br>
 
 
 <a href="shops?category=Gelateria"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzsUb2uETh9lSRYKrKyxJ8cIQax0WlGRtUFAzG5nonq1yVOMP"height="42" width="42"></a>
