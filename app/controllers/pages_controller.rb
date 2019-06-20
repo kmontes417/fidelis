@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def add_stamp
+    UpdateCardService.call(params[:id], current_user.shop_id, 1)
+    redirect_to dashboard_path
   end
-
 end
-

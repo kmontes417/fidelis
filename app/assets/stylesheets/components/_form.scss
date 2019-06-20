@@ -1,0 +1,60 @@
+.container {
+  background-image: linear-gradient($parple, $blue);
+  height: 100%;
+  width: 100%;
+}
+
+.form-login {
+  background-color: transparent;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+  h2 {
+    font-size: 30px;
+    font-weight: 3px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    border: 3px solid $white;
+  }
+
+
+.form-inputs {
+  color: white;
+  border-radius: 16px;
+}
+
+.input-field {
+  color: white;
+  border-radius: 16px;
+}
+  .search-btn {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: $white;
+    padding: 4px;
+    border-radius: 36px;
+    color: $parple;
+  }
+
+.create-btn {
+  margin-top: 4px;
+  background-color: transparent;
+  padding: 4px;
+  border-radius: 36px;
+  border: 3px solid $white;
+  color: $white;
+  display: block;
+  text-align: center;
+}
+
+.forgot-btn {
+  color: $white;
+  display: block;
+  text-align: center;
+}

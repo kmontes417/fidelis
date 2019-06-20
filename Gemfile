@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'rqrcode'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

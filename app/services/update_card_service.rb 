@@ -1,0 +1,30 @@
+class UpdateCardService
+  def self.call(user_id, shop_id, star_count)
+    @card = Card.where(user_id: user_id, shop_id: shop_id, status: "pending").first
+    if @card.present?
+      update_card(user_id, shop_id, star_count)
+    else
+      create_new_card(user_id, shop_id, star_count)
+    end
+  end
+
+  private
+
+  def create_new_card(user_id, shop_id, star_count)
+    @card = Card.new(user_id: user_id, shop_id: shop_id, star_count: star_count)
+    @card.save
+  end
+
+  def update_card(user_id, shop_id, star_count)
+    counter = 0
+    star_count.times do
+      if @card.star_count < Shop.find(shop_id).max_stars
+        @card.update(star_count: @card.star_count + 1)
+        counter += 1
+      else
+        @card.update(status: "completed")
+        create_new_card(user_id, shop_id, star_count - counter)
+      end
+    end
+  end
+end
