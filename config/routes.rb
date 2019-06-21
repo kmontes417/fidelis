@@ -9,6 +9,7 @@
   get '/qr/:id', to: 'pages#star_form', as: 'cards'
   post '/qr/:id/add', to: 'pages#add_stamp', as: 'stamp'
   get '/dashboard', to: 'pages#dashboard'
+  post '/card/:id', to: 'pages#close', as: 'close'
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
