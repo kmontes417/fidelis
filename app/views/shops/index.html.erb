@@ -26,6 +26,7 @@
 
 
 <% @shops.each do |shop| %>
+<a href="shops/<%=shop.id %>" id="link">
     <div class="d-flex mx-auto" style="width: 350px;" id="cards">
       <div class="mr-auto p-2">
         <h1 id="title"> <%= shop.name %></h1>
@@ -33,9 +34,11 @@
       </div>
       <div class="p-2"><img src="<%= shop.photo %> "height="60" width="60" id="img-card"></div>
     </div>
+    </a>
 
     <br>
 <% end %>
+
 
 
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
