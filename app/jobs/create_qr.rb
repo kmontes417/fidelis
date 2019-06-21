@@ -11,8 +11,6 @@ class CreateQr < ApplicationJob
 
   def domain
     return 'www.fidelis.site' if Rails.env == "production"
-
     'localhost:3000'
-
   end
 end

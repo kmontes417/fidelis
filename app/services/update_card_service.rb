@@ -23,7 +23,7 @@ class UpdateCardService
 
   def update_card
     counter = 0
-    @card = Card.where(user_id: @user_id, shop_id: @shop_id, status: "pending").first
+    @card = Card.where(user_id: @usern_id, shop_id: @shop_id, status: "pending").first
     @star_count.to_i.times do
       if @card.star_count < Shop.find(@shop_id).max_stars
         @card.update(star_count: @card.star_count + 1)
