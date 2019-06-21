@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_162753) do
     t.integer "max_stars", default: 10
     t.string "address"
     t.string "photo"
+    t.string "category"
     t.float "latitude"
     t.float "longitude"
     t.bigint "category_id"
