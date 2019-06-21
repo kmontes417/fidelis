@@ -19,8 +19,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
-gem 'sidekiq'
-gem 'sidekiq-failures', '~> 1.0'
 gem 'popper_js', '~> 1.14.5'
 
 group :development do
