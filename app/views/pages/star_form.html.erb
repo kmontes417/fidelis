@@ -7,3 +7,9 @@
 <% end %>
 
 
+<% @completed_cards.each do |card| %>
+  <div>
+  <%=  link_to "redeem", close_path(card), method: :post %>
+  </div>
+<% end %>
+
