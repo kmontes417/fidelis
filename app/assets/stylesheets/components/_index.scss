@@ -16,9 +16,31 @@
 
 #cards {
     background-color: white;
-    padding: 20px;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 #img-card {
   border-radius: 30px;
+}
+
+#title {
+  font-size: 1.2em;
+}
+
+#description {
+  font-size: 0.7em;
+}
+
+.fixed-buttons{
+  position: fixed;
+  bottom: 0;
+  display: block;
+}
+
+#map-button {
+    height: 60px;
+    width: 100vw;
+    position: fixed;
+    bottom: 16px;
 }

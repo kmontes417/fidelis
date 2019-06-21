@@ -4,7 +4,6 @@
  box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 
-
 .card-trip {
   overflow: hidden;
   background: white;
@@ -31,7 +30,6 @@
   margin: 0;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 10px;
   display: flex;
@@ -48,7 +46,6 @@
   width: 40px;
 }
 
-
 .popup-me {
   position: fixed;
   bottom: 0;
@@ -59,15 +56,15 @@ h2 {
   color: black;
 }
 
-#botton {
+#button {
   position: absolute;
   right: 20px;
   bottom: 20px;
 }
 
-
 .align-items-lg-stretch {
   padding: 6px;
+  font-size: 1em;
 }
 
 body {
@@ -100,3 +97,4 @@ body {
 .shop-info h2 {
   margin-bottom: 20px;
 }
+

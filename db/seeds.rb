@@ -18,6 +18,10 @@ sofia = User.create!(first_name: "Sofia", last_name: "Bianchi", photo: "https://
 agnese = User.create!(first_name: "Agnese", last_name: "Costa", photo: "https://randomuser.me/api/portraits/women/62.jpg", email: "agnese@lewagon.com", password: "123456", qr: "")
 salvatore = User.create!(first_name: "Salvatore", last_name: "Esposito", photo: "https://randomuser.me/api/portraits/men/4.jpg", email: "salvatore@lewagon.com", password: "123456", qr: "")
 federica = User.create!(first_name: "Federica", last_name: "Rossi", photo: "https://randomuser.me/api/portraits/women/79.jpg", email: "federica@lewagon.com", password: "123456", qr: "")
+maria = User.create!(first_name: "Maria", last_name: "Bianchi", photo: "https://randomuser.me/api/portraits/women/10.jpg", email: "maria@lewagon.com", password: "123456", qr: "")
+mario = User.create!(first_name: "Mario", last_name: "Costa", photo: "https://randomuser.me/api/portraits/women/62.jpg", email: "mario@lewagon.com", password: "123456", qr: "")
+gianni = User.create!(first_name: "Gianni", last_name: "Esposito", photo: "https://randomuser.me/api/portraits/men/4.jpg", email: "gianni@lewagon.com", password: "123456", qr: "")
+peppe = User.create!(first_name: "Peppe", last_name: "Rossi", photo: "https://randomuser.me/api/portraits/women/79.jpg", email: "peppe@lewagon.com", password: "123456", qr: "")
 
 
 
@@ -33,6 +37,8 @@ puts "Creating Categories"
 pizzeria = Category.create!(name: "Pizzeria")
 gelateria = Category.create!(name: "Gelateria")
 osteria = Category.create!(name: "Osteria")
+barbiere = Category.create!(name: "Barbiere")
+marijuana = Category.create!(name: "Marijuana")
 
 
 puts "Creating Shops"
@@ -44,6 +50,10 @@ shop3 = Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from 
 shop4 = Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", user: agnese, photo: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80", category: gelateria, address:"Via Spadari, 13, Milan")
 shop5 = Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", user: salvatore, photo: "https://images.unsplash.com/photo-1559227492-13bbe046224e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", category: osteria, address:"Via Tortona, 3, Milan")
 shop6 = Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", user: federica, photo: "https://images.unsplash.com/photo-1557686413-2f7e2277bfa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80", category: pizzeria, address:"Via Giovanni Gherardini, Milan")
+shop7 = Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naple", user: maria, photo: "https://images.unsplash.com/photo-1541533848490-bc8115cd6522?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", category: barbiere, address:"Via Vincenzo Monti, 15, Milan")
+shop8 = Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love", user: mario, photo: "https://images.unsplash.com/photo-1521322714240-ee1d383eab62?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80", category: barbiere, address:"Corso Magenta, 10, Milan")
+shop9 = Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine", user: gianni, photo: "https://images.unsplash.com/photo-1536819114556-1e10f967fb61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", category: marijuana, address:"Viale Premuda, 16, Milan")
+shop10 = Shop.create!(name:"Pizzeria Baggio", description:"Great Price-Quality", user: peppe, photo: "https://images.unsplash.com/photo-1457573358540-3f57f7995c6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", category: marijuana, address:"Via Pietro Mascagni, 20, Milan")
 
 
 puts "Creating Cards"
