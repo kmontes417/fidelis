@@ -1,6 +1,6 @@
 
 <div>
-  <% if @user.cards.exists? %>
+  <% if @user.shop.nil? %>
     <%= render 'consumer_dashboard' %>
   <% else %>
     <%= render 'owner_dashboard' %>
