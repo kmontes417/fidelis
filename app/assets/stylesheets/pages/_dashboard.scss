@@ -59,7 +59,7 @@ h2 {
   color: black;
 }
 
-#bottone {
+#botton {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -89,3 +89,14 @@ body {
   align-items: center;
 }
 
+.shop-info  {
+  text-align: center;
+}
+
+.shop-info p {
+  margin-top: -15px;
+}
+
+.shop-info h2 {
+  margin-bottom: 20px;
+}
