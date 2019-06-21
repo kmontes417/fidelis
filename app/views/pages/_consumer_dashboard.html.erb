@@ -2,13 +2,13 @@
 <div class=".align-items-lg-stretch">
 
   <div class="cards-container-dashboard">
-    <% @shops.each do |shop| %>
-       <%card = Card.where(user_id: @user, shop_id: shop, status: "pending").first %>
+    <% @user.cards.each do |card| %>
     <div>
-      <%= link_to shop_path(shop) do %>
+      <%= link_to shop_path(card.shop.id) do %>
       <div class="card-trip">
         <div class="card-trip-infos">
           <div>
+            <%shop = Shop.find(card.shop_id) %>
             <h2><%= shop.name %></h2>
             <p>Number of stars: <%= card.star_count %> out of 10</p>
           </div>
@@ -18,8 +18,9 @@
       <% end %>
     </div>
 
-    <% end %>
 
+    <% end %>
+s
   </div>
 
 </div>
