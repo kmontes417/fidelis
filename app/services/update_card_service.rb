@@ -18,7 +18,7 @@ class UpdateCardService
 
   def create_new_card(count)
     new_card = Card.new(user_id: @user_id, shop_id: @shop_id, star_count: count)
-    new_card.save
+    new_card.save!
   end
 
   def update_card
