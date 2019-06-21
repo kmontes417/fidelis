@@ -1,5 +1,20 @@
 
+
 <div class="align-items-lg-stretch">
+
+  <div class="avatar-card">
+
+    <div class="name-user">
+      <img src='<%= current_user.photo %>' id="avatar-bordered"></img>
+    </div>
+
+    <div class="name-user">
+      <p>Welcome <%= current_user.first_name %>!</p>
+    </div>
+
+  </div>
+
+
 
   <div class="cards-container-dashboard">
     <% @user.cards.each do |card| %>
