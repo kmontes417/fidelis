@@ -3,7 +3,7 @@
 
 <%= simple_form_for @card, :url => stamp_path(@scanned_user) do |f| %>
   <%= f.input :star_count, collection: 1..10, label:"Add stars" %>
-  <%= f.button :submit, label:"Create a card/ Update star count" %>
+  <%= f.button :submit, "Create a card/ Update star count" %>
 <% end %>
 
 

@@ -1,6 +1,6 @@
-<h1>ciao</h1>
+<h1>User card info </h1>
 <% a = User.find params[:id] %>
 <% a.cards.each do |a|%>
-  <p><%= a.star_count  %></p>
-  <p><%= a.status %></p>
+  <p> Current star count: <%= a.star_count  %></p>
+  <p> Card status: <%= a.status %></p>
 <% end %>
