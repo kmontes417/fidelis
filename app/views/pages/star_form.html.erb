@@ -1,6 +1,9 @@
+<p>Consumer name: <%= @scanned_user.first_name %> </p>
+<p>Star count: <%= @card.star_count %>/ 10 </p>
+
 <%= simple_form_for @card, :url => stamp_path(@scanned_user) do |f| %>
-  <%= f.input :star_count, collection: 1..10 %>
-  <%= f.button :submit %>
+  <%= f.input :star_count, collection: 1..10, label:"Add stars" %>
+  <%= f.button :submit, "Create a card/ Update star count" %>
 <% end %>
 
 
