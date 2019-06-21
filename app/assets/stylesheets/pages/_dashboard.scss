@@ -1,7 +1,16 @@
+.avatar-card {
+ overflow: hidden;
+ background: white;
+ box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  margin: 30px;
+
 }
 
 .card-trip > img {
@@ -24,11 +33,12 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
 .card-trip-infos .card-trip-user {
@@ -56,4 +66,26 @@ h2 {
 }
 
 
+.align-items-lg-stretch {
+  padding: 6px;
+}
+
+body {
+  background-color: $light-gray !important;
+}
+
+#avatar-bordered {
+  width: 80px;
+  border-radius: 80%;
+  text-align:center;
+}
+
+.name-user {
+  text-align:center;
+}
+
+#avatar-box {
+  justify-content: center;
+  align-items: center;
+}
 
