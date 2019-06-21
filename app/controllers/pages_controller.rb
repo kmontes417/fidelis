@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
   def star_form
     @card = Card.new
-    @scanned_user = params[:id]
+    @scanned_user = User.find(params[:id])
   end
 
   def add_stamp
