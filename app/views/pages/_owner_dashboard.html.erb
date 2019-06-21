@@ -5,45 +5,55 @@
   <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
   </div>
 
-<p> OWNER  DASHBOARD</p>
-
-<div>
-  <p> Your shop info:</p>
-  <p> Welcome <%= @user.first_name %>! </p>
+<div class ="shop-info">
+  <h2> Welcome <%= @user.first_name %>! </h2>
+  <p> Here is your shop info:</p>
   <p> Name: <%= @user.shop.name %> </p>
   <p> Address: <%= @user.shop.address %> </p>
   <p> Category: <%= @user.shop.category.name %> </p>
-  <p> description: <%= @user.shop.description %> </p>
+  <p> Description: <%= @user.shop.description %> </p>
+</div>
+
+<div>
+  <label class="cameraButton" > Scan QR
+      <input type="file" accept="image/*;capture=camera">
+  </label>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div>
+      <button type="button" class="btn btn-info">
+      <%= link_to "Add a promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
+    </button>
+  </div>
 </div>
 
 
-<strong><p> button to scan QR code </p></strong>
-<input type="file" accept="image/*" capture="camera">
-
-
-<div>
-  <button type="button" class="btn btn-info">
-  <%= link_to "Add a promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
-</button>
-
-
-<p> list of all promotions (edit/destroy buttons - javascript _promotion.html.erb(partial)) </p>
-
+<div class="cards-container-dashboard">
+  <% @promotions.each do |promotion|  %>
   <div>
-    <% @promotions.each do |promotion|  %>
-    <p> Promotion name: <%= promotion.name %> </p>
-    <p> Promotion description: <%= promotion.description %> </p>
-    <div>
-    <button type="button" class="btn btn-success">
-      <%= link_to "Edit a promotion", edit_shop_promotion_path(@user.shop, promotion)%>
-    </button>
-    <button type="button" class="btn btn-warning">
-      <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
-    </button>
-     <button class="btn btn-danger text-white">
-        <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
-            data: { confirm: "Are you sure?" } %>
-        </button>
+    <div class="card-trip">
+      <div class="card-trip-infos">
+        <div>
+          <p> Promotion name: <%= promotion.name %> </p>
+          <p> Promotion description: <%= promotion.description %> </p>
+            <button type="button" class="btn btn-success">
+              <%= link_to "Edit a promotion", edit_shop_promotion_path(@user.shop, promotion)%>
+            </button>
+            <button type="button" class="btn btn-warning">
+              <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
+            </button>
+             <button class="btn btn-danger text-white">
+                <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+            </button>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
+</div>
+
+
+
 

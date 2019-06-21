@@ -1,6 +1,10 @@
 <h1>User card info </h1>
-<% a = User.find params[:id] %>
-<% a.cards.each do |a|%>
-  <p> Current star count: <%= a.star_count  %></p>
-  <p> Card status: <%= a.status %></p>
-<% end %>
+
+<div>
+  <% a = User.find params[:id] %>
+  <% a.cards.each do |a|%>
+    <p> Shop name: <%= a.shop.name %></p>
+    <p> Current star count: <%= a.star_count  %></p>
+    <p> Card status: <%= a.status %></p>
+  <% end %>
+</div>
