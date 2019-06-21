@@ -8,9 +8,9 @@
 </a>
 <a href="shops?category=Osteria"><img src="https://media.istockphoto.com/vectors/black-restaurant-icon-with-chef-hat-vector-id886653480"height="42" width="42">
 </a>
-<a href="shops?category=Osteria"><img src="https://st2.depositphotos.com/2498595/6811/v/950/depositphotos_68114123-stock-illustration-barbershop-icon.jpg"height="50" width="50">
+<a href="shops?category=Barbiere"><img src="https://st2.depositphotos.com/2498595/6811/v/950/depositphotos_68114123-stock-illustration-barbershop-icon.jpg"height="50" width="50">
 </a>
-<a href="shops?category=Osteria"><img src="https://cdn3.iconfinder.com/data/icons/marijuana/480/Solid_Leaf-512.png"height="40" width="50">
+<a href="shops?category=Marijuana"><img src="https://cdn3.iconfinder.com/data/icons/marijuana/480/Solid_Leaf-512.png"height="40" width="50">
 </a>
 
 </div>
@@ -38,36 +38,35 @@
 <% end %>
 
 
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="d-flex" id="map-button">
 
   <div class="ml-auto p-2">
   <!-- Button trigger modal -->
   <img src="https://i.ibb.co/rZ4MXps/icons-03.png" data-toggle="modal" data-target="#exampleModalLong" height="42" width="42">
-
-  <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div
-            id="map"
-            style="width: 100%;
-            height: 600px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-          ></div>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-      </div>
-    </div>
 
   <br>
 
