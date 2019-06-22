@@ -1,10 +1,36 @@
-const icon = document.querySelectorAll('[id=icon]');
+
+const icon = document.querySelectorAll('.icon');
 
 icon.forEach(img => {
   img.addEventListener("click", (event) => {
-   img.removeAttribute("id");
-  });
+  if(img.className === (".icon")) {
+    img.className = (".icon-onclick");
+  }
+  else {
+    img.className = (".icon");
+  };
 });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
