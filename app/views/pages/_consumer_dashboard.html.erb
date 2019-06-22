@@ -1,5 +1,4 @@
 
-
 <div class="align-items-lg-stretch">
 
   <div class="avatar-card">
@@ -10,6 +9,7 @@
 
     <div class="name-user">
       <p>Welcome <%= current_user.first_name %>!</p>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </div>
 
   </div>
