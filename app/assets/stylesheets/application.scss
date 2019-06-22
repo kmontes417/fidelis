@@ -16,4 +16,6 @@ body {
   background-color: $light-gray !important;
 }
 
-
+abbr[title="required"] {
+  display: none;
+}
