@@ -4,3 +4,4 @@
 
 
 Turbolinks.setProgressBarDelay(20);
+
