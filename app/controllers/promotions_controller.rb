@@ -1,8 +1,10 @@
-class PromotionController < ApplicationController
+class PromotionsController < ApplicationController
 
   def new
     @shop = Shop.find(params[:shop_id])
     @promotion = Promotion.new
+    @promotion.shop = @shop
+    authorize @promotion
   end
 
   def create
@@ -14,11 +16,13 @@ class PromotionController < ApplicationController
     else
       render :new
     end
+    authorize @promotion
   end
 
   def edit
     @promotion = Promotion.find(params[:id])
     @shop = current_user.shop
+    authorize @promotion
   end
 
   def update
@@ -28,10 +32,12 @@ class PromotionController < ApplicationController
     else
       render :edit
     end
+    authorize @promotion
   end
 
   def destroy
     @promotion = Promotion.find params[:id]
+    authorize @promotion
     @promotion.destroy
     redirect_to dashboard_path
   end

@@ -7,6 +7,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card = Card.find(params[:id])
+    authorize @card
     @card.destroy
     redirect_to root_path
   end
