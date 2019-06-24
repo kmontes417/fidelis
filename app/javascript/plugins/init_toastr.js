@@ -1,5 +1,3 @@
-
-
 const initToastr = () => {
   const t = document.getElementById("btn-toast");
   if (t) {

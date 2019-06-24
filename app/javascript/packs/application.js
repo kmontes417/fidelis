@@ -11,7 +11,13 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 
+Turbolinks.setProgressBarDelay(20);
+
+document.addEventListener('turbolinks:load', (event) => {
+    console.log('Turbolinks loaded');
+
 initMapbox();
 
 initToastr();
 
+});
