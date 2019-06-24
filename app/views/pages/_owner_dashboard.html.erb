@@ -40,10 +40,10 @@
         <div>
           <p> Promotion name: <%= promotion.name %> </p>
           <p> Promotion description: <%= promotion.description %> </p>
-            <button id="btn-toast" type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success">
               <%= link_to "Edit a promotion", edit_shop_promotion_path(@user.shop, promotion)%>
             </button>
-            <button id="btn-toast" type="button" class="btn btn-warning">
+            <button  type="button" class="btn btn-warning">
               <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
             </button>
              <button class="btn btn-danger text-white">
