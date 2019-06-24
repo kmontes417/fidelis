@@ -17,6 +17,17 @@
   background-color: white;
 }
 
+
+.icon {
+  opacity: 0.4;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.icon-onclick {
+  opacity: 0.9;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
 #cards {
     background-color: white;
     padding: 15px;
