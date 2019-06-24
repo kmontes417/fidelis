@@ -2,6 +2,7 @@
  overflow: hidden;
  background: white;
  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+ border-radius: 0 0 20px 20px;
 }
 
 .card-trip {
@@ -63,7 +64,7 @@ h2 {
 }
 
 .align-items-lg-stretch {
-  padding: 6px;
+  padding: 0px;
   font-size: 1em;
 }
 
@@ -79,6 +80,7 @@ body {
 
 .name-user {
   text-align:center;
+  margin-top: 10px;
 }
 
 #avatar-box {
@@ -88,6 +90,9 @@ body {
 
 .shop-info  {
   text-align: center;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .shop-info p {
@@ -98,4 +103,48 @@ body {
   margin-bottom: 20px;
 }
 
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#btn-delete {
+  background-color: $red;
+  margin: 5px 5px 0 5px;
+  a {
+    color: white;
+  }
+}
+
+#btn-edit {
+  background-color: $yellow;
+  margin: 5px 5px 0 5px;
+  a {
+    color: white;
+  }
+}
+
+#btn-add {
+  background-color: $green;
+  margin: 5px 5px 0 5px;
+  a {
+    color: white;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
 

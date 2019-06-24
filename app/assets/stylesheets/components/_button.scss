@@ -4,14 +4,19 @@ label.cameraButton {
 
   /* Styles to make it look like a button */
   padding: 0.5em;
-  border: 2px solid #666;
-  border-color: #EEE #CCC #CCC #EEE;
-  background-color: blue;
-  color: white;
+  border: 0;
   position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: 1;
+  background: transparent;
+  background-image: url('camera.png');
+  background-position: center;
+  background-size: 42px 42px;
+  background-repeat: no-repeat;
+  height: 53px;
+  width: 53px;
+  object-fit: cover;
 }
 
 /* Look like a clicked/depressed button */
@@ -22,4 +27,7 @@ label.cameraButton:active {
 /* This is the part that actually hides the 'Choose file' text box for camera inputs */
 label.cameraButton input[accept*="camera"] {
   display: none;
+}
+
+.cameraButton {
 }
