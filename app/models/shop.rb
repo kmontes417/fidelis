@@ -10,4 +10,9 @@ class Shop < ApplicationRecord
   geocoded_by :address
 
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def user_stars(user)
+    pending_card = cards.where(status:"pending", user: user).first
+    pending_card&.star_count
+  end
 end

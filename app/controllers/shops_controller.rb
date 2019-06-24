@@ -16,6 +16,8 @@ class ShopsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { shop: shop })
       }
     end
+    @cards= Card.all
+    @user = current_user
   end
 
   def show
