@@ -1,62 +1,83 @@
 
 <!-- _owner_dashboard.html.erb
  -->
-
+<div>
   <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
   </div>
-
-<div class ="shop-info">
-  <h2> Welcome <%= @user.first_name %>! </h2>
-  <p> Here is your shop info:</p>
-  <p> Name: <%= @user.shop.name %> </p>
-  <p> Address: <%= @user.shop.address %> </p>
-  <p> Category: <%= @user.shop.category.name %> </p>
-  <p> Description: <%= @user.shop.description %> </p>
-  <button type="button" class="btn btn-success">
-    <%= link_to "Edit shop info", edit_shop_path(@user.shop)%>
-  </button>
 </div>
 
-<div>
-  <label class="cameraButton" > Scan QR
-      <input type="file" accept="image/*;capture=camera">
-  </label>
-</div>
+  <div class="avatar-card">
+    <div>
+      <div class="name-user">
+        <p><strong>Welcome <%= @user.first_name %></strong></p>
+      </div>
+    </div>
+  </div>
 
-<div class="d-flex justify-content-center">
-  <div>
-      <button type="button" class="btn btn-info">
-      <%= link_to "Add a promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
-    </button>
+<br>
+
+<div class="d-flex mx-auto" style="width: 350px;" id="cards">
+    <div class="shop-info">
+      <div class="mr-auto p-2">
+      <div>
+        <h3 class="mb-4"> <%= @user.shop.name %> </h3>
+        <p> <%= @user.shop.address %> </p>
+        <p> <%= @user.shop.category.name %> </p>
+        <p> <%= @user.shop.description %> </p>
+        <div class="btn-container">
+          <button type="button" class="btn" id="btn-edit">
+            <%= link_to "Edit info", edit_shop_path(@user.shop)%>
+          </button>
+          <button type="button" class="btn" id="btn-add">
+            <%= link_to "Add promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+<br>
 
 <div class="cards-container-dashboard">
   <% @promotions.each do |promotion|  %>
   <div>
-    <div class="card-trip">
-      <div class="card-trip-infos">
+     <div class="d-flex mx-auto" style="width: 350px;" id="cards">
+      <div class="mr-auto p-2">
         <div>
-          <p> Promotion name: <%= promotion.name %> </p>
-          <p> Promotion description: <%= promotion.description %> </p>
-            <button type="button" class="btn btn-success">
-              <%= link_to "Edit a promotion", edit_shop_promotion_path(@user.shop, promotion)%>
-            </button>
-            <button type="button" class="btn btn-warning">
-              <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
-            </button>
-             <button class="btn btn-danger text-white">
-                <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-            </button>
+          <h1 id="title"> Promotion name: <%= promotion.name %> </h1>
+          <h3 id="description"> Promotion description: <%= promotion.description %> </h3>
+            <div class="btn-container">
+              <button type="button" class="btn" id="btn-edit">
+                <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
+              </button>
+               <button type="button" class="btn" id="btn-delete">
+                  <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+              </button>
+            </div>
           </div>
         </div>
       </div>
+    <br>
     <% end %>
   </div>
 </div>
 
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn" id="btn-delete">
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  </button>
+</div>
+
+<div class="d-flex" id="map-button">
+  <div class="ml-auto p-2">
+      <label class="cameraButton" >
+          <input type="file" accept="image/*;capture=camera">
+      </label>
+    <br>
+  </div>
+</div>
 
 
 
