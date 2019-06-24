@@ -12,6 +12,9 @@
   <p> Address: <%= @user.shop.address %> </p>
   <p> Category: <%= @user.shop.category.name %> </p>
   <p> Description: <%= @user.shop.description %> </p>
+  <button type="button" class="btn btn-success">
+    <%= link_to "Edit shop info", edit_shop_path(@user.shop)%>
+  </button>
 </div>
 
 <div>

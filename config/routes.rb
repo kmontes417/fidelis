@@ -2,7 +2,7 @@
   require "sidekiq/web"
   devise_for :users
   root to: 'pages#home'
-  resources :shops, only: [:index, :show] do
+  resources :shops, only: [:index, :show, :edit, :update] do
     resources :promotion
     resources :cards, only: [:create, :update, :destroy]
   end
