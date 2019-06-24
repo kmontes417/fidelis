@@ -16,4 +16,12 @@ body {
   background-color: $light-gray !important;
 }
 
+abbr[title="required"] {
+  display: none;
+}
 
+
+.turbolinks-progress-bar {
+    height: 5px;
+    background-color: $green;
+  }

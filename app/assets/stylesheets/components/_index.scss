@@ -15,6 +15,17 @@
 #category-div {
   padding: 20px;
   background-color: white;
+
+}
+
+.icon {
+  opacity: 0.4;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.icon-onclick {
+  opacity: 0.9;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
 #cards {
@@ -22,6 +33,24 @@
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+#circle {
+    background: $green;
+    opacity: 0.1;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+#circle-check {
+    background: $green;
+    opacity: 0.9;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin-right: 4px;
 }
 
 #img-card {

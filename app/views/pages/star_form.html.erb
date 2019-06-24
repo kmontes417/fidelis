@@ -1,15 +1,13 @@
 <p>Consumer name: <%= @scanned_user.first_name %> </p>
-<p>Star count: <%= @card.star_count %>/ 10 </p>
+<p>Star count: <%= @user_card.nil? ? 0 : @user_cardw.star_count %>/ 10  </p>
 
 <%= simple_form_for @card, :url => stamp_path(@scanned_user.token) do |f| %>
   <%= f.input :star_count, collection: 1..10, label:"Add stars" %>
   <%= f.button :submit, "Create a card/ Update star count" %>
 <% end %>
 
-
 <% @completed_cards.each do |card| %>
   <div>
   <%=  link_to "redeem", close_path(card), method: :post %>
   </div>
 <% end %>
-

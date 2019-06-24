@@ -1,12 +1,11 @@
 class ShopsController < ApplicationController
   def index
-    # raise
     if params[:category] == nil
       @shops = Shop.all
     else
       @categories = Category.where(name: params[:category])
       @shops = Shop.where(category: @categories)
-    end
+  end
 
     @shops = @shops.where.not(latitude: nil, longitude: nil)
     @categories = Category.all
@@ -17,7 +16,8 @@ class ShopsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { shop: shop })
       }
     end
-
+    @cards= Card.all
+    @user = current_user
   end
 
   def show
@@ -30,5 +30,24 @@ class ShopsController < ApplicationController
       lng: @shop.longitude,
       infoWindow: render_to_string(partial: "infowindow", locals: { shop: @shop })
     }]
+  end
+
+  def edit
+    @shop = Shop.find params[:id]
+  end
+
+  def update
+    @shop = Shop.find params[:id]
+    if @shop.update(shop_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def shop_params
+    params.require(:shop).permit(:name, :description, :address, :photo)
   end
 end

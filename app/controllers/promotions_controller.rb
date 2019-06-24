@@ -27,10 +27,14 @@ class PromotionsController < ApplicationController
 
   def update
     @promotion = Promotion.find(params[:id])
-    if @promotion.update(promotion_params)
-      redirect_to dashboard_path
-    else
-      render :edit
+    respond_to do |format|
+      if @promotion.update(promotion_params)
+        format.html { redirect_to dashboard_path, notice: 'Your promotion was updated' }
+        format.json { render :show, status: :created, location: dashboard_path }
+      else
+        format.html { render :edit }
+        format.json { render json: @promotion.errors, status: :unprocessable_entity }
+      end
     end
     authorize @promotion
   end
