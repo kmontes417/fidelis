@@ -1,35 +1,36 @@
-.container {
-  margin-top: 30px;
-  width: 75%;
+#name {
+ background-color: $white;
 }
 
-body p {
-  font-size: 18px;
+#h3 {
+  font-size: 1em;
 }
 
-.shop-info {
-  border-bottom: 1px solid #c8c8c8;
+#description {
+  font-size: 0.7em;
+  opacity: 0.6;
 }
 
-.description {
-  border-bottom: 1px solid #c8c8c8;
-  margin-top: 15px;
-  margin-top: 15px;
+#address {
+  font-size: 0.5em;
 }
 
-
-.shop-info {
-  display: flex;
-  padding-top: 15px;
-  align-items: center;
-  margin-bottom: 15px;
-  img {
-    height: 40px;
-    width: 40px;
-    margin-right: 15px;
-  }
+#cards {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
 }
 
-.card-user {
-  flex-grow: 1;
+#cardsnoshop {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    opacity: 0.4;
+}
+
+#noshop {
+  font-size: 0.7em;
+  opacity: 0.6;
 }

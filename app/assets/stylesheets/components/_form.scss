@@ -1,16 +1,44 @@
-.container {
-  background-image: linear-gradient($parple, $blue);
-  height: 100%;
-  width: 100%;
+.form-control {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: white !important;
+  border: 0px solid black !important;
 }
 
-.form-login {
-  background-color: transparent;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 8px;
-  width: 100%;
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem $green;
 }
+
+.inputTransparent {
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.container {
+  background-image: linear-gradient($dark-green, $light-green);
+  height: 100vh;
+}
+
+.form-check-input  {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: white !important;
+}
+
+.form-inputs {
+  color:rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.input-field {
+width: 60%;
+  border-radius:20px;
+}
+.create-btn {
+  border: none !important;
+  color:rgba(255, 255, 255, 0.5) !important;
+}
+
+
+
 
 
 .form-signup {
@@ -31,26 +59,6 @@
     text-align: center;
     color: white;
     border: 3px solid $white;
-  }
-
-
-.form-inputs {
-  color: white;
-  border-radius: 16px;
-}
-
-.input-field {
-  color: black;
-  border-radius: 16px;
-}
-  .search-btn {
-    width: 100%;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: $white;
-    padding: 4px;
-    border-radius: 36px;
-    color: $parple;
   }
 
 .create-btn {
