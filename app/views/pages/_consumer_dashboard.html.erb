@@ -1,45 +1,35 @@
 
 
-<div class="align-items-lg-stretch">
-
   <div class="avatar-card">
-
     <div class="name-user">
       <img src='<%= current_user.photo %>' id="avatar-bordered"></img>
     </div>
-
     <div class="name-user">
       <p><strong>Welcome <%= current_user.first_name %></strong>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></p>
     </div>
-
   </div>
-
+<br>
 
 
   <div id="cards-ajax" class="cards-container-dashboard">
     <% @user.cards.each do |card| %>
     <div>
-      <%= link_to shop_path(card.shop.id) do %>
-      <div class="card-trip">
-        <div class="card-trip-infos">
-          <div>
+      <div class="promo-container" id="cards">
+        <div class="promo-info">
+          <%= link_to shop_path(card.shop.id) do %>
             <%shop = Shop.find(card.shop_id) %>
-            <h2><%= shop.name %></h2>
-            <p>Number of stars: <%= card.star_count %> out of 10</p>
-          </div>
+            <h1 id="title"><%= shop.name %></h1>
+            <h3 id="description">Number of stars: <%= card.star_count %> out of 10</h3>
           <img category icon>
         </div>
       </div>
+      <br>
       <% end %>
     </div>
-
-
    <% end %>
-
   </div>
 
-</div>
 
 
 <!-- Button trigger modal -->
