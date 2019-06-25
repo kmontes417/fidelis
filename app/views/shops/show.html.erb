@@ -1,50 +1,10 @@
-<!-- shop show page -->
-
-<div class="show-banner"> Hello </div>
-
-<div class="container justify-content-center" >
-  <%= @shop.photo %>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="shop-wrapper">
-        <div class="shop-info">
-          <strong><h1><%= @shop.name %></h1></strong>
-          <p>Shop owner: <%= @shop.user.first_name.capitalize %> </p>
-          <p><%= @shop.address.capitalize %></p>
-          <p><%= @shop.category.name %></p>
-        </div>
-
-        <div class="description mb-3">
-          <h2>Description</h2>
-          <p><%= @shop.description.capitalize %>.</p>
-        </div>
-      </div>
-    </div>
+<div>
+  <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @shop.photo %>'); opacity: 0.9;">
   </div>
-
-  <% if @card.any? %>
-    <div>
-       <%= @card.first.user.first_name.capitalize %>
-       <p>star count: <%= @card.first.star_count %> </p>
-      <div>
-        <% @card.first.star_count.times do %>
-          <i class="fa fa-star star" aria-hidden="true"></i>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-
-<input type="file" accept="image/*" capture="camera">
-
-
 </div>
-
-  <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @marker.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-
-
+<div class="d-flex justify-content-center p-4" id="name">
+  <div class="d-flex flex-column">
+    <div> <h3 id="h3"><%= @shop.name %></h3></div>
+    <div class="d-flex justify-content-center"> <h3 id="address"><%= @shop.address %></h3></div>
+  </div>
+</div>
