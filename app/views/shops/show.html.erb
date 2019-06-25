@@ -1,5 +1,5 @@
 <div>
-  <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @shop.photo %>'); opacity: 0.9;">
+  <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @shop.photo %>'); height: 200px; opacity: 0.9;" >
   </div>
 </div>
 <div class="d-flex justify-content-center p-4" id="name">
@@ -8,3 +8,55 @@
     <div class="d-flex justify-content-center"> <h3 id="address"><%= @shop.address %></h3></div>
   </div>
 </div>
+<br>
+<div class="d-flex mx-auto justify-content-between" style="width: 350px;" id="cards">
+  <h3 class=" d-flex mx-auto justify-content-center"id="description"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lor in reprehen" </h3>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+  <div class="d-flex mx-auto" style="width: 350px;" id="cards">
+    <div class="mr-auto p-2">
+      <h1 id="title">loyality card progress:</h1>
+      <h3>
+      <% if @card.present? %>
+      <div class="d-flex justify-content-start">
+        <% stars = @shop.user_stars(current_user) %>
+        <% @shop.max_stars.to_i.times do |i| %>
+        <% if stars <= i %>
+        <div id="circle"> </div>
+        <% else %>
+        <div id="circle-check"> </div>
+        <% end %>
+        <% end %>
+      </div>
+      <% end %>
+      </h3>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
