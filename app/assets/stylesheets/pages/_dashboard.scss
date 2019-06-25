@@ -1,3 +1,18 @@
+
+
+.some-class {
+  display: block;
+  margin: 0 auto;
+  fill: #3498db;
+  width: 5em;
+  height: 5em;
+}
+
+.qr-container {
+    background-size: 20px 30px;
+
+}
+
 .avatar-card {
  overflow: hidden;
  background: white;
@@ -54,7 +69,7 @@
 }
 
 h2 {
-  color: black;
+  color:black;
 }
 
 #button {
@@ -171,4 +186,3 @@ body {
 .promo-info a {
   color: black !important ;
 }
-

@@ -12,6 +12,7 @@ gem 'rqrcode'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'human_token'
+gem 'inline_svg'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
