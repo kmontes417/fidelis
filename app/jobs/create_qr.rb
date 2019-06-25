@@ -4,9 +4,9 @@ class CreateQr < ApplicationJob
   def perform(user_id)
     puts "Creating QR code"
     user = User.find(user_id)
-    user.qr = RQRCode::QRCode.new("#{domain}/qr/#{user_id}").as_svg
+    user.qr = RQRCode::QRCode.new("#{domain}/qr/#{user.token}").as_svg
     user.save
-    puts "QR created with with URL: #{domain}/qr/#{user_id}"
+    puts "QR created with with URL: #{domain}/qr/#{user.token}"
   end
 
   def domain
