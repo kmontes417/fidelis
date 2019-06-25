@@ -1,6 +1,4 @@
-
-
-  <div class="avatar-card">
+<div class="avatar-card">
     <div class="name-user">
       <img src='<%= current_user.photo %>' id="avatar-bordered"></img>
     </div>
@@ -12,57 +10,32 @@
 <br>
 
 
-  <div id="cards-ajax" class="cards-container-dashboard">
-    <% @user.cards.each do |card| %>
-    <div>
-      <div class="promo-container" id="cards">
-        <div class="promo-info">
-          <%= link_to shop_path(card.shop.id) do %>
-            <%shop = Shop.find(card.shop_id) %>
-            <h1 id="title"><%= shop.name %></h1>
-            <h3 id="description">Number of stars: <%= card.star_count %> out of 10</h3>
-          <img category icon>
-        </div>
+<div id="cards-ajax" class="cards-container-dashboard">
+  <% @user.cards.each do |card| %>
+  <div>
+    <%= link_to shop_path(card.shop.id) do %>
+    <div class="promo-container" id="cards">
+      <div class="promo-info">
+        <%shop = Shop.find(card.shop_id) %>
+        <h1 id="title"><%= shop.name %> </h1>
+          <div class="d-flex justify-content-center">
+            <% stars = card.star_count %>
+            <% card.shop.max_stars.to_i.times do |i| %>
+            <% if stars <= i %>
+            <div id="circle"> </div>
+            <% else %>
+            <div id="circle-check"> </div>
+            <% end %>
+            <% end %>
+          </div>
       </div>
-      <br>
-      <% end %>
+
+      <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
+      </div>
     </div>
-   <% end %>
+    <br>
+    <% end %>
   </div>
-
-
-
-<!-- Button trigger modal -->
-<div>
-  <img src="https://i.ibb.co/V241bbx/icons-04.png" height="42" width="42" data-toggle="modal" data-target="#exampleModal" id="button">
+  <% end %>
 </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Your Personal QR code</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span id="closing-modal" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= current_user.qr.html_safe%>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
 

@@ -37,7 +37,7 @@
 
 #circle {
     background: $green;
-    opacity: 0.1;
+    opacity: 0.3;
     width: 13px;
     height: 13px;
     border-radius: 50%;
@@ -46,7 +46,7 @@
 
 #circle-check {
     background: $green;
-    opacity: 0.9;
+    opacity: 0.8;
     width: 13px;
     height: 13px;
     border-radius: 50%;
@@ -76,4 +76,10 @@
     width: 100vw;
     position: fixed;
     bottom: 16px;
+}
+
+.shop-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

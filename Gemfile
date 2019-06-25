@@ -23,6 +23,8 @@ gem 'geocoder'
 gem 'popper_js', '~> 1.14.5'
 gem 'pundit'
 gem 'turbolinks'
+gem 'httparty'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
