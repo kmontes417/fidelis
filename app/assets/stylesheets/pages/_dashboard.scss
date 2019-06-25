@@ -1,7 +1,7 @@
 .avatar-card {
  overflow: hidden;
  background: white;
- box-shadow: 0 0 6px rgba(0,0,0,0.2);
+ box-shadow: 0 0 2px rgba(0,0,0,0.2);
  border-radius: 0 0 20px 20px;
 }
 
@@ -90,9 +90,8 @@ body {
 
 .shop-info  {
   text-align: center;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
 }
 
 .shop-info p {
@@ -100,6 +99,10 @@ body {
 }
 
 .shop-info h2 {
+  margin-bottom: 20px;
+}
+
+.shop-info h3 {
   margin-bottom: 20px;
 }
 
@@ -148,3 +151,18 @@ body {
   justify-content: center;
 }
 
+.shop-container {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.promo-container {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.promo-info a {
+  color: black;
+}
