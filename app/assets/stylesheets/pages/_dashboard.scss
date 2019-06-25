@@ -54,7 +54,7 @@
 }
 
 h2 {
-  color: black;
+  color:black;
 }
 
 #button {
@@ -166,3 +166,13 @@ body {
 .promo-info a {
   color: black;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+a:link {color: black;}
+a:visited {color: black;}
+a:hover {color: black;}
+a:active {color: black;}
+
