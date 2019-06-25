@@ -14,23 +14,28 @@ class PagesController < ApplicationController
 
   def star_form
     @card = Card.new
-    @scanned_user = User.find params[:id]
+    @scanned_user = User.find_by(token: params[:token])
     @completed_cards = @scanned_user.cards.where(status: "completed")
+    @user_card = Card.where(user_id: @scanned_user, shop_id: current_user.shop, status: "pending").first
+    # authorize @user_card
+    authorize @card
   end
 
   def add_stamp
-    UpdateCardService.new(params[:id], current_user.shop.id, params[:card][:star_count]).call
+    @scanned_user = User.find_by(token: params[:token])
+    UpdateCardService.new(@scanned_user, current_user.shop, params[:card][:star_count]).call
   end
 
   def close
     @card = Card.find params[:id]
     redirect_to dashboard_path if current_user.shop != @card.shop
     @card.update(status: "closed")
+    authorize @card
   end
 
   private
 
   def star_params
-    params.require(:card).permit(:star_count, :id)
+    params.require(:card).permit(:star_count, :id, :token)
   end
 end

@@ -1,10 +1,10 @@
 class ShopsController < ApplicationController
   def index
+    @shops = policy_scope(Shop)
     if params[:category] == nil
-      @shops = Shop.all
     else
       @categories = Category.where(name: params[:category])
-      @shops = Shop.where(category: @categories)
+      @shops = @shops.where(category: @categories)
   end
 
     @shops = @shops.where.not(latitude: nil, longitude: nil)
@@ -16,7 +16,7 @@ class ShopsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { shop: shop })
       }
     end
-    @cards= Card.all
+    @cards = Card.all
     @user = current_user
   end
 
@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
       lng: @shop.longitude,
       infoWindow: render_to_string(partial: "infowindow", locals: { shop: @shop })
     }]
+    authorize @shop
   end
 
   def edit
