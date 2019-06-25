@@ -13,50 +13,24 @@
   <h3 class=" d-flex mx-auto justify-content-center"id="description"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lor in reprehen" </h3>
 </div>
 <br>
-
-
-
-
-
-
-
-
-
-  <div class="d-flex mx-auto" style="width: 350px;" id="cards">
-    <div class="mr-auto p-2">
-      <h1 id="title">loyality card progress:</h1>
-      <h3>
-      <% if @card.present? %>
-      <div class="d-flex justify-content-start">
-        <% stars = @shop.user_stars(current_user) %>
-        <% @shop.max_stars.to_i.times do |i| %>
-        <% if stars <= i %>
-        <div id="circle"> </div>
-        <% else %>
-        <div id="circle-check"> </div>
-        <% end %>
-        <% end %>
-      </div>
+<% if @card.present? %>
+<div class="d-flex mx-auto" style="width: 350px;" id="cards">
+  <div class="mr-auto p-2">
+    <h1 id="title">loyality card progress:</h1>
+    <div class="d-flex justify-content-start">
+      <% stars = @shop.user_stars(current_user) %>
+      <% @shop.max_stars.to_i.times do |i| %>
+      <% if stars <= i %>
+      <div id="circle"> </div>
+      <% else %>
+      <div id="circle-check"> </div>
       <% end %>
-      </h3>
+      <% end %>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+<% else %>
+<div class="d-flex mx-auto" style="width: 200px;" id="cardsnoshop">
+  <h3 class=" d-flex mx-auto justify-content-center"id="noshop"> "you dont have a loyality card, yet!" </h3>
+</div>
+<% end %>
