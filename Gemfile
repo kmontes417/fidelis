@@ -11,6 +11,7 @@ gem 'redis'
 gem 'rqrcode'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'human_token'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -20,6 +21,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 gem 'popper_js', '~> 1.14.5'
+gem 'pundit'
 gem 'turbolinks'
 
 group :development do
