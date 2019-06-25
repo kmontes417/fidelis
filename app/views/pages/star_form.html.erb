@@ -1,13 +1,54 @@
+
 <p>Consumer name: <%= @scanned_user.first_name %> </p>
 <p>Star count: <%= @user_card.nil? ? 0 : @user_card.star_count %>/ 10  </p>
 
-<%= simple_form_for @card, :url => stamp_path(@scanned_user.token) do |f| %>
-  <%= f.input :star_count, collection: 1..10, label:"Add stars" %>
-  <%= f.button :submit, "Create a card/ Update star count" %>
-<% end %>
+<div class="align-items-lg-stretch">
 
-<% @completed_cards.each do |card| %>
-  <div>
-  <%=  link_to "redeem", close_path(card), method: :post %>
+  <div class="avatar-card">
+
+    <div class="name-user">
+      <img src='<%= @scanned_user.photo %>' id="avatar-bordered"></img>
+    </div>
+
+    <div class="name-user">
+      <p><strong><%= @scanned_user.first_name %></strong></p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <% stars = @user_card.nil? ? 0 : @user_card.star_count %>
+      <% current_user.shop.max_stars.to_i.times do |i| %>
+      <% if stars <= i %>
+      <div id="circle"> </div>
+      <% else %>
+      <div id="circle-check"> </div>
+      <% end %>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div class="d-flex justify-content-center">
+      <%= simple_form_for @card, :url => stamp_path(@scanned_user.token) do |f| %>
+      <%= f.input :star_count, collection: 1..10, label:"Add Stamps" %>
+      <button class="button"><%= f.button :submit, "Stamp!" %></button>
+      <% end %>
+    </div>
+
+    <br>
+
   </div>
-<% end %>
+
+
+  <br>
+
+  <div class="d-flex justify-content-center" id="redeem">
+    <% @completed_cards.each do |card| %>
+      <button class="button"><%= link_to "redeem", close_path(card), method: :post %></button>
+    <% end %>
+  </div>
+
+
+
+</div>
+
+
