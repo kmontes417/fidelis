@@ -38,6 +38,28 @@
 </div>
 
 
+
+<div id="cards-ajax" class="cards-container-dashboard">
+  <% @cards_completed.each do |card| %>
+  <div>
+    <%= link_to shop_path(card.shop.id) do %>
+    <div class="promo-container" id="cards">
+      <div class="promo-info">
+        <%shop = Shop.find(card.shop_id) %>
+        <h1 id="title"><%= shop.name %> </h1>
+            <div class="d-flex justify-content-start">
+      <div id="redeem-alert">Congratulation! You can redeem this card 🎉 </div>
+    </div>
+      </div>
+      <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
+      </div>
+    </div>
+    <br>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
 <!-- Button trigger modal -->
 <div>
   <img src="https://i.ibb.co/V241bbx/icons-04.png" height="42" width="42" data-toggle="modal" data-target="#exampleModal" id="button">

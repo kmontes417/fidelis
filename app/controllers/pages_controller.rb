@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @promotions = Promotion.all
     @cards = Card.all
     @cards_pending = @user.cards.where(status: "pending")
+    @cards_completed = @user.cards.where(status: "completed")
     @shops = Shop.all
   end
 
