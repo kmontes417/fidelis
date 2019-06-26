@@ -9,13 +9,14 @@ class PagesController < ApplicationController
     @user = current_user
     @promotions = Promotion.all
     @cards = Card.all
+    @cards_pending = @user.cards.where(status: "pending")
     @shops = Shop.all
   end
 
   def star_form
     @card = Card.new
     @scanned_user = User.find_by(token: params[:token])
-    @completed_cards = @scanned_user.cards.where(status: "completed")
+    @completed_cards = @scanned_user.cards.where(user: @scanned_user, shop: current_user, status: "completed")
     @user_card = Card.where(user_id: @scanned_user, shop_id: current_user.shop, status: "pending").first
     # authorize @user_card
     authorize @card
