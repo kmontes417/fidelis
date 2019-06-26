@@ -35,19 +35,6 @@ class ShopsController < ApplicationController
     authorize @shop
   end
 
-  def edit
-    @shop = Shop.find params[:id]
-  end
-
-  def update
-    @shop = Shop.find params[:id]
-    if @shop.update(shop_params)
-      redirect_to dashboard_path
-    else
-      render :edit
-    end
-  end
-
   private
 
   def shop_params

@@ -20,13 +20,9 @@
       <div class="shop-info">
         <h3> <%= @user.shop.name %> </h3>
         <p> <%= @user.shop.address %> </p>
-        <p> <%= @user.shop.category.name %> </p>
         <p> <%= @user.shop.description %> </p>
       </div>
       <div class="btn-container">
-        <button type="button" class="btn" id="btn-edit">
-          <%= link_to "Edit info", edit_shop_path(@user.shop)%>
-        </button>
         <button type="button" class="btn" id="btn-add">
           <%= link_to "Add promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
         </button>
