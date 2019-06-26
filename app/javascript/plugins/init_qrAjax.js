@@ -1,7 +1,8 @@
 const initQrAjax = () => {
 
-  const closingModal = document.getElementById("button");
-  closingModal.addEventListener('click', () => {
+  const qrButton = document.getElementById("button");
+  if (!qrButton) return;
+  qrButton.addEventListener('click', () => {
   Rails.ajax({
   type: "GET",
   url: "/dashboard",
