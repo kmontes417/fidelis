@@ -40,10 +40,10 @@
   <div class="d-flex mx-auto" style="width: 350px;" id="cards">
     <div class="mr-auto p-2">
       <h1 id="title">
-        <%= shop.name %>
+      <%= shop.name %>
       </h1>
       <h3 id="description">
-        <%= shop.address %>
+      <%= shop.address %>
       </h3>
       <h3>
       <% card = Card.find_by(shop:shop, user:current_user, status:"pending").present? %>
@@ -61,12 +61,10 @@
       </div>
       <% end %>
       </h3>
-       <h3>
+      <h3>
       <% if card_completed %>
       <div class="d-flex justify-content-start">
-        <% shop.max_stars.to_i.times do |i| %>
-        <div id="circle"> </div>
-        <% end %>
+        <div id="completed">Congratulation! You can redeem this card 🎉 </div>
       </div>
       <% end %>
       </h3>
