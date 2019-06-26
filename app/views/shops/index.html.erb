@@ -69,7 +69,13 @@
       <% end %>
       </h3>
     </div>
-    <div class="shop-avatar"><img src="<%= shop.photo %> "height="60" width="60" id="img-card"></div>
+    <div class="shop-avatar">
+      <%if card_completed %>
+      <img src="<%= shop.photo %> "height="60" width="60" id="img-completed">
+      <% else %>
+      <img src="<%= shop.photo %> "height="60" width="60" id="img-card">
+      <% end %>
+    </div>
   </div>
 </a>
 <br>
