@@ -180,16 +180,12 @@ body {
   margin: 0 auto;
 }
 
+.cards-container-dashboard a {
+  color: black !important;
+  text-decoration: none;
+}
+
 .promo-info a {
-  color: black;
+  color: black !important ;
 }
-
-a {
-  text-decoration: none !important;
-}
-
-a:link {color: black;}
-a:visited {color: black;}
-a:hover {color: black;}
-a:active {color: black;}
 

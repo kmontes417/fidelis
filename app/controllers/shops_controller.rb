@@ -23,6 +23,8 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find params[:id]
     @card = Card.where(shop: @shop, user: current_user, status: "pending")
+    # @cards = Card.where(shop: @shop, user: current_user)
+    @cards = Card.where(shop: @shop, user: current_user, status: "completed")
     @promotions = Promotion.all
 
     @marker = [{
