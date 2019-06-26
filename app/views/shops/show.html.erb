@@ -30,7 +30,20 @@
   </div>
 </div>
 <% else %>
+<% if @cards.first.present? %>
+<div class="d-flex mx-auto" style="width: 350px;" id="cards">
+  <div class="mr-auto p-2">
+    <h1 id="title">loyality card progress:</h1>
+    <div class="d-flex justify-content-start">
+      <% @shop.max_stars.to_i.times do |i| %>
+      <div id="circle"> </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% else %>
 <div class="d-flex mx-auto" style="width: 200px;" id="cardsnoshop">
   <h3 class=" d-flex mx-auto justify-content-center"id="noshop"> "you dont have a loyality card, yet!" </h3>
 </div>
+<% end %>
 <% end %>
