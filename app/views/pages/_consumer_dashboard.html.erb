@@ -1,6 +1,4 @@
-
-
-  <div class="avatar-card">
+<div class="avatar-card">
     <div class="name-user">
       <img src='<%= current_user.photo %>' id="avatar-bordered"></img>
     </div>
@@ -10,7 +8,6 @@
     </div>
   </div>
 <!-- <br> -->
-
 
 <div id="cards-ajax" class="cards-container-dashboard">
   <% @user.cards.each do |card| %>
@@ -31,18 +28,14 @@
             <% end %>
           </div>
       </div>
+      <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
+      </div>
     </div>
     <br>
     <% end %>
   </div>
   <% end %>
 </div>
-
-
-
-
-
-
 
 
 <!-- Button trigger modal -->
@@ -61,8 +54,10 @@
           <span id="closing-modal" aria-hidden="true">&times;</span>
         </button>
       </div>
-        <div class="modal-body d-flex justify-content-around">
-          <%= current_user.qr.html_safe %>
+
+        <div class="modal-body d-flex justify-content-around" id="qr">
+
+          <%= current_user.qr&.html_safe %>
           <%#= inline_svg current_user.qr.to_svg , class: 'some-class' %>
         </div>
       <!-- <div class="modal-footer">
@@ -71,12 +66,5 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
 

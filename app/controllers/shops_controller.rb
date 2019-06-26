@@ -23,6 +23,8 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find params[:id]
     @card = Card.where(shop: @shop, user: current_user, status: "pending")
+    # @cards = Card.where(shop: @shop, user: current_user)
+    @cards = Card.where(shop: @shop, user: current_user, status: "completed")
     @promotions = Promotion.all
 
     @marker = [{
@@ -31,19 +33,6 @@ class ShopsController < ApplicationController
       infoWindow: render_to_string(partial: "infowindow", locals: { shop: @shop })
     }]
     authorize @shop
-  end
-
-  def edit
-    @shop = Shop.find params[:id]
-  end
-
-  def update
-    @shop = Shop.find params[:id]
-    if @shop.update(shop_params)
-      redirect_to dashboard_path
-    else
-      render :edit
-    end
   end
 
   private

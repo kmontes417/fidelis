@@ -8,6 +8,8 @@
   height: 5em;
 }
 
+
+
 .qr-container {
     background-size: 20px 30px;
 
@@ -178,8 +180,9 @@ body {
   margin: 0 auto;
 }
 
-.promo-info a {
-  color: black;
+.cards-container-dashboard a {
+  color: black !important;
+  text-decoration: none;
 }
 
 #cards {
@@ -192,10 +195,7 @@ body {
 
 a {
   text-decoration: none !important;
+.promo-info a {
+  color: black !important ;
 }
-
-a:link {color: black;}
-a:visited {color: black;}
-a:hover {color: black;}
-a:active {color: black;}
 

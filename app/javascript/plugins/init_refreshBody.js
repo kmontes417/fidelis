@@ -1,4 +1,4 @@
-const refreshBody = () => {
+const initRefreshBody = () => {
 
     Rails.ajax({
     url: "/dashboard",
@@ -16,3 +16,4 @@ const refreshBody = () => {
   }
 })
 }
+export { initRefreshBody };

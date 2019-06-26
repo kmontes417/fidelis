@@ -39,8 +39,12 @@
 <a href="shops/<%=shop.id %>" id="link">
   <div class="d-flex mx-auto" style="width: 350px;" id="cards">
     <div class="mr-auto p-2">
-      <h1 id="title"> <%= shop.name %></h1>
-      <h3 id="description"><%= shop.description %> </h3>
+      <h1 id="title">
+        <%= shop.name %>
+      </h1>
+      <h3 id="description">
+        <%= shop.address %>
+      </h3>
       <h3>
       <% card = Card.find_by(shop:shop, user:current_user, status:"pending").present? %>
       <% if card %>
@@ -57,7 +61,7 @@
       <% end %>
       </h3>
     </div>
-    <div class="p-2"><img src="<%= shop.photo %> "height="60" width="60" id="img-card"></div>
+    <div class="shop-avatar"><img src="<%= shop.photo %> "height="60" width="60" id="img-card"></div>
   </div>
 </a>
 <br>
