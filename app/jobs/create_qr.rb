@@ -7,7 +7,7 @@ class CreateQr < ApplicationJob
     user.qr = RQRCode::QRCode.new("#{domain}/qr/#{user.token}").as_svg(offset: 0, color: '000',
                     shape_rendering: 'crispEdges',
                     module_size: 6)
-    user.save
+    user.save!
     puts "QR created with with URL: #{domain}/qr/#{user.token}"
   end
 
