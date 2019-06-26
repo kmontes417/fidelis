@@ -1,10 +1,8 @@
 
-<p>Consumer name: <%= @scanned_user.first_name %> </p>
-<p>Star count: <%= @user_card.nil? ? 0 : @user_card.star_count %>/ 10  </p>
 
 <div class="align-items-lg-stretch">
 
-  <div class="avatar-card">
+  <div class="card-stamp">
 
     <div class="name-user">
       <img src='<%= @scanned_user.photo %>' id="avatar-bordered"></img>
@@ -30,7 +28,7 @@
     <div class="d-flex justify-content-center">
       <%= simple_form_for @card, :url => stamp_path(@scanned_user.token) do |f| %>
       <%= f.input :star_count, collection: 1..10, label:"Add Stamps" %>
-      <button class="button"><%= f.button :submit, "Stamp!" %></button>
+      <button class="button-stamp"><%= f.button :submit, "Stamp!" %></button>
       <% end %>
     </div>
 
@@ -38,17 +36,20 @@
 
   </div>
 
+  <div class="card-stamp">
+    <br>
 
-  <br>
-
-  <div class="d-flex justify-content-center" id="redeem">
-    <% @completed_cards.each do |card| %>
-      <button class="button"><%= link_to "redeem", close_path(card), method: :post %></button>
-    <% end %>
+    <div class="d-flex justify-content-center" id="redeem">
+      <% @completed_cards.each do |card| %>
+        <button id="redeem-btn"><%= link_to "redeem", close_path(card), method: :post %></button>
+      <% end %>
+    </div>
   </div>
 
 
+  <div class="card-stamp-bottom">
+  </div>
 
-</div>
+
 
 

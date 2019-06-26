@@ -4,7 +4,6 @@
   margin: 10px;
 }
 
-
 #redeem {
   display: flex;
   flex-direction: column;
@@ -12,9 +11,34 @@
   color: white
 }
 
-.button {
+#redeem-btn a {
   background-color: $green;
-  margin: 8px;
+  margin: 18px;
+  color: white;
+  padding: 15px;
 }
 
 
+.button-stamp {
+  background-color: $green;
+  color: white;
+}
+
+
+.body {
+  color: white;
+}
+
+
+.card-stamp {
+  overflow: hidden;
+  background: white;
+  border-radius: 0 0 0 0;
+}
+
+.card-stamp-bottom {
+  overflow: hidden;
+  background: white;
+  border-radius: 0 0 0 0;
+  height: 100vh
+}
