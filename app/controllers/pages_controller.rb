@@ -24,6 +24,7 @@ class PagesController < ApplicationController
   def add_stamp
     @scanned_user = User.find_by(token: params[:token])
     UpdateCardService.new(@scanned_user, current_user.shop, params[:card][:star_count]).call
+    redirect_to dashboard_path
   end
 
   def close
