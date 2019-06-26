@@ -10,7 +10,7 @@
 <!-- <br> -->
 
 <div id="cards-ajax" class="cards-container-dashboard">
-  <% @user.cards.each do |card| %>
+  <% @cards_pending.each do |card| %>
   <div>
     <%= link_to shop_path(card.shop.id) do %>
     <div class="promo-container" id="cards">

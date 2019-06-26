@@ -11,7 +11,7 @@ class CardPolicy < ApplicationPolicy
   end
 
   def destroy?
-    @record.user == @user.shop
+    @record.user == @user
   end
 
   def close?
