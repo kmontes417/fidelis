@@ -40,7 +40,7 @@
   <div class="d-flex mx-auto" style="width: 350px;" id="cards">
     <div class="mr-auto p-2">
       <h1 id="title"> <%= shop.name %></h1>
-      <h3 id="description"><%= shop.description %>. </h3>
+      <h3 id="description"><%= shop.description[0..80] %>.. </h3>
       <h3>
       <% card = Card.find_by(shop:shop, user:current_user, status:"pending").present? %>
       <% if card %>
