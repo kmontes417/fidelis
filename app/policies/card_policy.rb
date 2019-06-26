@@ -11,10 +11,10 @@ class CardPolicy < ApplicationPolicy
   end
 
   def destroy?
-    @record.user == @user
+    @record.user == @user.shop
   end
 
   def close?
-    @record.shop == @user
+    @record.shop == @user.shop
   end
 end
