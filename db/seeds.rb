@@ -80,7 +80,7 @@ shop19 = Shop.create!(name:"Barbershop Luigi", description:"Amazing deals on hai
 
 puts "Creating Cards"
 
-Card.create!(star_count: 0, status: "pending", shop_id: shop1.id, user_id: andrea.id)
+Card.create!(star_count: 6, status: "pending", shop_id: shop1.id, user_id: andrea.id)
 Card.create!(star_count: 10, status: "completed", shop_id: shop6.id, user_id: andrea.id)
 Card.create!(star_count: 3, status: "pending", shop_id: shop19.id, user_id: andrea.id)
 
@@ -91,7 +91,7 @@ Card.create!(star_count: 4, status: "pending", shop_id: shop9.id, user_id: asia.
 
 
 Card.create!(star_count: 10, status: "completed", shop_id: shop3.id, user_id: gastone.id)
-Card.create!(star_count: 0, status: "pending", shop_id: shop8.id, user_id: gastone.id)
+Card.create!(star_count: 2, status: "pending", shop_id: shop8.id, user_id: gastone.id)
 Card.create!(star_count: 7, status: "pending", shop_id: shop17.id, user_id: gastone.id)
 
 
@@ -109,7 +109,7 @@ Card.create!(star_count: 4, status: "pending", shop_id: shop4.id, user_id: franc
 Card.create!(star_count: 10, status: "completed", shop_id: shop16.id, user_id: franca.id)
 
 Card.create!(star_count: 10, status: "completed", shop_id: shop11.id, user_id: illaria.id)
-Card.create!(star_count: 0, status: "pending", shop_id: shop12.id, user_id: illaria.id)
+Card.create!(star_count: 3, status: "pending", shop_id: shop12.id, user_id: illaria.id)
 Card.create!(star_count: 1, status: "pending", shop_id: shop13.id, user_id: illaria.id)
 
 Card.create!(star_count: 10, status: "completed", shop_id: shop17.id, user_id: gemma.id)
