@@ -5,7 +5,7 @@
 <div class="d-flex justify-content-center p-4" id="name">
   <div class="d-flex flex-column">
     <div> <h3 id="h3"><%= @shop.name %></h3></div>
-    <a href="" class="d-flex justify-content-center" data-toggle="modal" data-target="#exampleModal" id="link">
+    <a href="" class="d-flex justify-content-center" data-toggle="modal" data-target="#map-show-pop" id="link">
       <img src="https://i.ibb.co/rZ4MXps/icons-03.png" alt="" height="9'" width="9">
       <h3 id="address"><%= @shop.address %></h3>
     </a>
@@ -13,9 +13,14 @@
 </div>
 <br>
 <div class="d-flex mx-auto justify-content-between" style="width: 350px;" id="cards">
-  <h3 class=" d-flex mx-auto justify-content-center"id="description"> <%= @shop.description %> </h3>
+  <h3 class=" d-flex mx-auto justify-content-center"id="description"> <%= @shop.description %>. </h3>
+   <button href="" class="d-flex justify-content-center" data-toggle="modal" data-target="#promo-pop" id="link">
+     <p> current promos </p>
+
+    </button>
 </div>
 <br>
+    </div>
 <% if @card.present? %>
 <div class="d-flex mx-auto" style="width: 350px;" id="cards">
   <div class="mr-auto p-2">
@@ -29,7 +34,6 @@
       <div id="circle-check"> </div>
       <% end %>
       <% end %>
-    </div>
   </div>
 </div>
 <% else %>
@@ -48,7 +52,35 @@
 </div>
 <% end %>
 <% end %>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+<div class="modal fade" id="promo-pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @shop.promotions.each do |promotion|  %>
+          <div>
+            <div class="promo-container" id="cards">
+              <div class="promo-info">
+                <h1 id="title"> <%= promotion.name.capitalize %> </h1>
+                <h3 id="description"> <%= promotion.description.capitalize %> </h3>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="map-show-pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -72,3 +104,8 @@
     </div>
   </div>
 </div>
+
+
+
+
+
