@@ -1,73 +1,60 @@
 <% content_for :meta_title, "#{@user.first_name}'s Dashboard - #{DEFAULT_META["meta_product_name"]}" %>
 <!-- _owner_dashboard.html.erb
- -->
+-->
 <div>
   <div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @user.shop.photo %>');">
   </div>
 </div>
-
-  <div class="avatar-card">
-    <div>
-      <div class="name-user">
-        <p><strong>Welcome <%= @user.first_name %></strong></p>
-      </div>
+<div class="avatar-card">
+  <div>
+    <div class="name-user">
+      <p><strong>Welcome <%= @user.first_name %></strong></p>
     </div>
   </div>
-
+</div>
 <br>
-
-    <div class="shop-container" id="cards">
-      <div class="shop-info">
-        <h3> <%= @user.shop.name %> </h3>
-        <p> <%= @user.shop.address %> </p>
-        <p> <%= @user.shop.description %> </p>
-      </div>
-      <div class="btn-container">
-        <button type="button" class="btn" id="btn-add">
-          <%= link_to "Add promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
-        </button>
-      </div>
-    </div>
-
+<div class="shop-container" id="cards">
+  <div class="shop-info">
+    <h3> <%= @user.shop.name %> </h3>
+    <p> <%= @user.shop.address %> </p>
+    <p> <%= @user.shop.description %> </p>
+  </div>
+  <div class="btn-container">
+    <button type="button" class="btn" id="btn-add">
+    <%= link_to "Add promotion", new_shop_promotion_path(@user.shop.id,Promotion.new) %>
+    </button>
+  </div>
+</div>
 <br>
-
 <div class="cards-container-dashboard d-flex justify-content-center">
   <% @user.shop.promotions.each do |promotion|  %>
-      <div>
-        <div class="promo-container" id="cards">
-          <div class="promo-info">
-            <h1 id="title"> <%= promotion.name.capitalize %> </h1>
-          </div>
-          <div class="btn-container d-flex justify-content-space-around">
-              <button type="button" id="btn-edit">
-                <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
-              </button>
-               <button type="button" id="btn-delete">
-                  <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-              </button>
-          </div>
-        </div>
-      <br>
-    <% end %>
+  <div class="promo-container cards">
+    <div class="card-body">
+      <h5 class="card-title"><%= promotion.name.capitalize %></h5>
+      <p class="card-text"><%= promotion.description.capitalize %></p>
+      <button type="button" id="promo-btn">
+      <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
+      </button>
+      <button type="button" id="promo-btn">
+      <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      </button>
+    </div>
   </div>
+  <% end %>
 </div>
-
+<br>
 <div class="d-flex justify-content-center">
-  <button type="button" class="btn" id="btn-delete">
+    <button type="button" class="btn" id="btn-delete">
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-  </button>
+    </button>
 </div>
-
 <div class="d-flex" id="map-button">
   <div class="ml-auto p-2">
-      <label class="cameraButton" >
-          <input type="file" accept="image/*;capture=camera">
-      </label>
+    <label class="cameraButton" >
+      <input type="file" accept="image/*;capture=camera">
+    </label>
     <br>
   </div>
 </div>
-
-
-    <br>
-
+<br>
