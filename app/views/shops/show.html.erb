@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@shop.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @shop.description %>
+<% content_for :meta_image, @shop.photo %>
 <div>
   <div class="show-banner" style="position: center bottom; background-size: cover; background-color: $white;background-image: url('<%= @shop.photo %>'); height: 200px; opacity: 0.9;" >
   </div>
@@ -53,7 +56,7 @@
 </div>
 <% else %>
 <div class="d-flex mx-auto" style="width: 200px;" id="cardsnoshop">
-  <h3 class=" d-flex mx-auto justify-content-center"id="noshop"> "you dont have a loyality card, yet!" </h3>
+  <h3 class=" d-flex mx-auto justify-content-center"id="noshop"> "You don't have a loyality card, yet!" </h3>
 </div>
 <% end %>
 <% end %>
