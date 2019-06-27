@@ -140,7 +140,8 @@ body {
 }
 
 #btn-delete {
-  background-color: $red;
+  z-index: 100;
+  background-color: #D0E1D4;
   margin: 5px 5px 0 5px;
   a {
     color: white;

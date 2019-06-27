@@ -1,24 +1,21 @@
 <% content_for :meta_title, "#{current_user.first_name}'s Dashboard - #{DEFAULT_META["meta_product_name"]}" %>
-
 <div class="avatar-card">
-    <div class="name-user">
-      <img src='<%= current_user.photo %>' id="avatar-bordered"></img>
-    </div>
-    <div class="name-user">
-      <p><strong>Welcome <%= current_user.first_name %></strong>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></p>
+  <div class="name-user">
+    <img src='<%= current_user.photo %>' id="avatar-bordered"></img>
+  </div>
+  <div class="name-user">
+    <p><strong>Welcome <%= current_user.first_name %></strong>
     </div>
   </div>
-<!-- <br> -->
-
-<div id="cards-ajax" class="cards-container-dashboard">
-  <% @cards_pending.each do |card| %>
-  <div>
-    <%= link_to shop_path(card.shop.id) do %>
-    <div class="promo-container" id="cards">
-      <div class="promo-info">
-        <%shop = Shop.find(card.shop_id) %>
-        <h1 id="title"><%= shop.name %> </h1>
+  <!-- <br> -->
+  <div id="cards-ajax" class="cards-container-dashboard">
+    <% @cards_pending.each do |card| %>
+    <div>
+      <%= link_to shop_path(card.shop.id) do %>
+      <div class="promo-container" id="cards">
+        <div class="promo-info">
+          <%shop = Shop.find(card.shop_id) %>
+          <h1 id="title"><%= shop.name %> </h1>
           <div class="d-flex justify-content-center">
             <% stars = card.star_count %>
             <% card.shop.max_stars.to_i.times do |i| %>
@@ -29,66 +26,62 @@
             <% end %>
             <% end %>
           </div>
+        </div>
+        <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
+        </div>
       </div>
-      <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
-      </div>
+      <br>
+      <% end %>
     </div>
-    <br>
     <% end %>
   </div>
-  <% end %>
-</div>
-
-
-
-<div id="cards-ajax" class="cards-container-dashboard">
-  <% @cards_completed.each do |card| %>
+  <div id="cards-ajax" class="cards-container-dashboard">
+    <% @cards_completed.each do |card| %>
+    <div>
+      <%= link_to shop_path(card.shop.id) do %>
+      <div class="promo-container" id="cards">
+        <div class="promo-info">
+          <%shop = Shop.find(card.shop_id) %>
+          <h1 id="title"><%= shop.name %> </h1>
+          <div class="d-flex justify-content-start">
+            <div id="redeem-alert">Congratulation! You can redeem this card 🎉 </div>
+          </div>
+        </div>
+        <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
+        </div>
+      </div>
+      <br>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn" id="btn-delete">
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    </button>
+  </div>
+  <br>
+  <!-- Button trigger modal -->
   <div>
-    <%= link_to shop_path(card.shop.id) do %>
-    <div class="promo-container" id="cards">
-      <div class="promo-info">
-        <%shop = Shop.find(card.shop_id) %>
-        <h1 id="title"><%= shop.name %> </h1>
-            <div class="d-flex justify-content-start">
-      <div id="redeem-alert">Congratulation! You can redeem this card 🎉 </div>
-    </div>
-      </div>
-      <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
-      </div>
-    </div>
-    <br>
-    <% end %>
+    <img src="https://i.ibb.co/V241bbx/icons-04.png" height="42" width="42" data-toggle="modal" data-target="#exampleModal" id="button">
   </div>
-  <% end %>
-</div>
-
-<!-- Button trigger modal -->
-<div>
-  <img src="https://i.ibb.co/V241bbx/icons-04.png" height="42" width="42" data-toggle="modal" data-target="#exampleModal" id="button">
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Your Personal QR code</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Your Personal QR code</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span id="closing-modal" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
+          </button>
+        </div>
         <div class="modal-body d-flex justify-content-around" id="qr">
-
           <%= current_user.qr&.html_safe %>
           <%#= inline_svg current_user.qr.to_svg , class: 'some-class' %>
         </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div> -->
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
     </div>
   </div>
-</div>
-
-
