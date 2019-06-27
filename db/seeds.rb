@@ -112,9 +112,6 @@ Card.create!(star_count: 10, status: "completed", shop_id: shop11.id, user_id: i
 Card.create!(star_count: 3, status: "pending", shop_id: shop12.id, user_id: illaria.id)
 Card.create!(star_count: 1, status: "pending", shop_id: shop13.id, user_id: illaria.id)
 
-Card.create!(star_count: 10, status: "completed", shop_id: shop17.id, user_id: alessio.id)
-Card.create!(star_count: 4, status: "pending", shop_id: shop2.id, user_id: alessio.id)
-Card.create!(star_count: 8, status: "pending", shop_id: shop6.id, user_id: alessio.id)
 
 
 puts "Creating Promotion"
