@@ -50,8 +50,11 @@
         <%shop = Shop.find(card.shop_id) %>
         <h1 id="title"><%= shop.name %> </h1>
             <div class="d-flex justify-content-start">
-      <div id="redeem-alert">Congratulation! You can redeem this card 🎉 </div>
-    </div>
+              <div>
+              <p> Ready to redeem! 🎉
+              </p>
+            </div>
+      </div>
       </div>
       <div class="shop-pic"><img src="<%= shop.photo %> "height="60" width="60" id="img-card">
       </div>
