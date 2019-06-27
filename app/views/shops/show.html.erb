@@ -70,7 +70,7 @@
       </div>
       <div class="modal-body">
         <% @shop.promotions.each do |promotion|  %>
-        <div>
+        <div style="overflow: hidden;">
           <div class="promo-container" id="cards">
             <div class="promo-info">
               <h1 id="title"> <%= promotion.name.capitalize %> </h1>
