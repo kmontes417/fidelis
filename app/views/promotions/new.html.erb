@@ -1,18 +1,17 @@
 <% content_for :meta_title, "Add a promo" %>
-
-<div class="container-principal-promo">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
-      <h3>Add a promotion</h3>
-      <%= simple_form_for [@shop, @promotion], url: shop_promotions_path, method: :post do |f| %>
-      <%= f.input :name, label: "Name your promotion" %>
-      <%= f.input :description, label: "What do you want to promote?" %>
-      <%= f.submit "Create your promotion", class: "promotion-btn"%>
-      <% end %>
+<div class="container-filler-white ">
+  <div class="form-login">
+    <div class="container-principal-promo d-flex justify-content-center">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-4">
+          <h3>Add a promotion</h3>
+          <%= simple_form_for [@shop, @promotion], url: shop_promotions_path, method: :post do |f| %>
+          <%= f.input :name, label: "Name your promotion"%>
+          <%= f.input :description, label: "What do you want to promote?"%>
+          <%= f.submit "Create", class: "promotion-btn"%>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="container-filler-white" >
-
 </div>

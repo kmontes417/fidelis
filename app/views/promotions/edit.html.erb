@@ -1,13 +1,18 @@
 <% content_for :meta_title, "Edit a promo" %>
-<!-- edit.html.erb -->
-<div class="col-md-8">
-  <h1>Edit a promotion</h1>
 
-  <%= simple_form_for @promotion, :url => shop_promotion_path(@shop, @promotion), method: :patch do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.button :submit, class: 'button btn-primary', id: "btn-toast"  %>
-  <% end %>
+<div class="container-filler-white ">
+  <div class="form-login">
+    <div class="container-principal-promo d-flex justify-content-center">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-4">
+          <h3>Edit a promotion</h3>
+          <%= simple_form_for @promotion, :url => shop_promotion_path(@shop, @promotion), method: :patch do |f| %>
+          <%= f.input :name, label: "Name your promotion"%>
+          <%= f.input :description, label: "What do you want to promote?"%>
+          <%= f.submit "Edit", class: "promotion-btn"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-

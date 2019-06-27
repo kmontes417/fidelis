@@ -1,16 +1,8 @@
 .container-filler-white {
-  overflow: hidden;
+  height: 100vh;
   background: white;
-  border-radius: 0 0 0 0;
-  height: 100vh
-}
-
-.container-principal-promo {
-  background: white;
+  text-align: center;
+  padding-top: 7em;
 }
 
 
-.promotion-btn {
-  background-color: $green;
-  color: white;
-}
