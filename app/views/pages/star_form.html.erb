@@ -1,8 +1,6 @@
 
-
+<div class="container-star-form">
 <div class="align-items-lg-stretch">
-
-  <div class="card-stamp">
 
     <div class="name-user">
       <img src='<%= @scanned_user.photo %>' id="avatar-bordered"></img>
@@ -34,22 +32,16 @@
 
     <br>
 
-  </div>
 
-  <div class="card-stamp">
-    <br>
-
-    <div class="d-flex justify-content-center" id="redeem">
+    <div class="d-flex justify-content-center">
+      <div class="row">
+        <div class="col-12">
       <% @completed_cards.each do |card| %>
-        <button id="redeem-btn"><%= link_to "redeem", close_path(card), method: :post %></button>
+      <div><button type="button" class="btn btn-primary" id="redeem-btn"><%= link_to "Redeem", close_path(card), method: :post %></button>
       <% end %>
+      </div>
+      </div>
     </div>
   </div>
-
-
-  <div class="card-stamp-bottom"></div>
 </div>
-
-
-
 

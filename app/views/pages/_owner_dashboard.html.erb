@@ -31,19 +31,18 @@
 
 <br>
 
-<div class="cards-container-dashboard">
+<div class="cards-container-dashboard d-flex justify-content-center">
   <% @user.shop.promotions.each do |promotion|  %>
       <div>
         <div class="promo-container" id="cards">
           <div class="promo-info">
             <h1 id="title"> <%= promotion.name.capitalize %> </h1>
-            <h3 id="description"> <%= promotion.description.capitalize %> </h3>
           </div>
-          <div class="btn-container">
-              <button type="button" class="btn" id="btn-edit">
+          <div class="btn-container d-flex justify-content-space-around">
+              <button type="button" id="btn-edit">
                 <%= link_to "Edit", edit_shop_promotion_path(@user.shop, promotion)%>
               </button>
-               <button type="button" class="btn" id="btn-delete">
+               <button type="button" id="btn-delete">
                   <%= link_to "Delete", shop_promotion_path(@user.shop, promotion), method: :delete,
                       data: { confirm: "Are you sure?" } %>
               </button>
@@ -63,7 +62,7 @@
 <div class="d-flex" id="map-button">
   <div class="ml-auto p-2">
       <label class="cameraButton" >
-          <input type="file" accept="image/*;capture=camera">
+          <input type="file" accept="image/*;" capture="environment">
       </label>
     <br>
   </div>

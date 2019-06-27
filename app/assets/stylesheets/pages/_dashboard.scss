@@ -18,8 +18,8 @@
 .avatar-card {
  overflow: hidden;
  background: white;
- box-shadow: 0 0 2px rgba(0,0,0,0.2);
- border-radius: 0 0 20px 20px;
+ box-shadow: 0 0 3px rgba(0,0,0,0.1);
+ border-radius: 0 0 10px 10px;
 }
 
 .card-trip {
@@ -97,7 +97,7 @@ body {
 
 .name-user {
   text-align:center;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 #avatar-box {
@@ -125,7 +125,7 @@ body {
 
 .btn {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 700;
     color: white;
     text-align: center;
     vertical-align: middle;
@@ -171,13 +171,15 @@ body {
 .shop-container {
   width: 350px;
   margin: 0 auto;
+ box-shadow: 0 0 3px rgba(0,0,0,0.1);
 }
 
 .promo-container {
   display: flex;
-  justify-content: space-between;
   width: 350px;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards-container-dashboard a {
