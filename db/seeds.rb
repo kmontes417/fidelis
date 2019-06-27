@@ -15,7 +15,7 @@ lucia = User.create!(first_name: "Lucia", last_name: "Ferrara", photo: "https://
 alessandro = User.create!(first_name: "Alessandro", last_name: "Villa", photo: "https://randomuser.me/api/portraits/men/22.jpg", email: "alessandro@lewagon.com", password: "123456", qr: "")
 giuseppe = User.create!(first_name: "Giuseppe", last_name: "Colombo", photo: "https://randomuser.me/api/portraits/men/47.jpg", email: "giuseppe@lewagon.com", password: "123456", qr: "")
 sofia = User.create!(first_name: "Sofia", last_name: "Bianchi", photo: "https://randomuser.me/api/portraits/women/09.jpg", email: "sofia@lewagon.com", password: "123456", qr: "")
-luigi = User.create!(first_name: "Luigi", last_name: "Manganiello", photo: "https://kitt.lewagon.com/placeholder/users/dub-G", email: "luigi@lewagon.com", password: "123456", qr: "")
+pietro = User.create!(first_name: "Pietro", last_name: "Ventimiglia", photo: "https://kitt.lewagon.com/placeholder/users/twentymls", email: "pietro@lewagon.com", password: "123456", qr: "")
 salvatore = User.create!(first_name: "Salvatore", last_name: "Esposito", photo: "https://randomuser.me/api/portraits/men/3.jpg", email: "salvatore@lewagon.com", password: "123456", qr: "")
 federica = User.create!(first_name: "Federica", last_name: "Rossi", photo: "https://randomuser.me/api/portraits/women/79.jpg", email: "federica@lewagon.com", password: "123456", qr: "")
 maria = User.create!(first_name: "Maria", last_name: "Bianchi", photo: "https://randomuser.me/api/portraits/women/10.jpg", email: "maria@lewagon.com", password: "123456", qr: "")
@@ -57,7 +57,7 @@ puts "Creating Shops"
 
 
 shop1 = Shop.create!(name:"Gelateria Duomo", description:"Best gelato in Milan. A place for those that want a fantastic Gelato in an elegant and friendly environment, during their lunch break or while taking a walk along the shopping streets of Milan. A welcoming place, to maintain a high profile, even when you are relaxing", user: lucia, photo: "https://images.unsplash.com/photo-1473213110592-19430a217c0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", category: gelateria, address: "Via Giovanni Boccaccio, 9, Milan")
-shop2 = Shop.create!(name:"Gelateria da Luigi", description:"Artisanal gelato. A place for those that want a fantastic Gelato in an elegant and friendly environment, during their lunch break or while taking a walk along the shopping streets of Milan. A welcoming place, to maintain a high profile, even when you are relaxing ", user: luigi, photo: "https://images.unsplash.com/photo-1529688499411-262f191fe29e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80", category: gelateria, address:"Via Mercato, 20, Milan")
+shop2 = Shop.create!(name:"Gelateria da Pietro", description:"Artisanal gelato. A place for those that want a fantastic Gelato in an elegant and friendly environment, during their lunch break or while taking a walk along the shopping streets of Milan. A welcoming place, to maintain a high profile, even when you are relaxing ", user: pietro, photo: "https://images.unsplash.com/photo-1529688499411-262f191fe29e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80", category: gelateria, address:"Via Mercato, 20, Milan")
 shop3 = Shop.create!(name:"Pizzeria da Luca", description:"Authentic Pizza from Naples. If you are looking for a place where you can enjoy an excellent pizza prepared with care and attention to detail, our pizza restaurant will not disappoint you. We offer soft and light pizzas for all tastes ", user: sofia, photo: "https://images.unsplash.com/photo-1542834369-f10ebf06d3e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80", category: pizzeria, address:"Via Giuseppe Pecchio, 11, Milan")
 shop4 = Shop.create!(name:"Gelateria Ambrogio", description:"Gelato made with love. A place for those that want a fantastic Gelato in an elegant and friendly environment, during their lunch break or while taking a walk along the shopping streets of Milan. A welcoming place, to maintain a high profile, even when you are relaxing", user: leonardo, photo: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80", category: gelateria, address:"Via Spadari, 13, Milan")
 shop5 = Shop.create!(name:"Osteria Sora Loci", description:"Best local cuisine. A journey into the Flavors and Perfumes of our Italy, passing through the regions richest in wine and food traditions. Simple dishes and highly selected raw materials offered in two separate à la carte menus for lunch and dinner", user: salvatore, photo: "https://images.unsplash.com/photo-1559227492-13bbe046224e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", category: osteria, address:"Via Tortona, 3, Milan")
@@ -112,9 +112,11 @@ Card.create!(star_count: 10, status: "completed", shop_id: shop11.id, user_id: i
 Card.create!(star_count: 3, status: "pending", shop_id: shop12.id, user_id: illaria.id)
 Card.create!(star_count: 1, status: "pending", shop_id: shop13.id, user_id: illaria.id)
 
-Card.create!(star_count: 10, status: "completed", shop_id: shop17.id, user_id: alessio.id)
 Card.create!(star_count: 4, status: "pending", shop_id: shop2.id, user_id: alessio.id)
+Card.create!(star_count: 10, status: "completed", shop_id: shop17.id, user_id: alessio.id)
 Card.create!(star_count: 8, status: "pending", shop_id: shop6.id, user_id: alessio.id)
+
+
 
 
 puts "Creating Promotion"
