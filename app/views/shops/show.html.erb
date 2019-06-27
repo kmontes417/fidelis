@@ -9,19 +9,26 @@
   <div class="d-flex flex-column">
     <div> <h3 id="h3"><%= @shop.name %></h3></div>
     <a href="" class="d-flex justify-content-center" data-toggle="modal" data-target="#map-show-pop" id="link">
-      <img src="https://i.ibb.co/rZ4MXps/icons-03.png" alt="" height="9'" width="9">
-      <h3 id="address"><%= @shop.address %></h3>
+      <img src="https://i.ibb.co/rZ4MXps/icons-03.png" alt="" height="20'" width="20" id="map-show-icon">
+      <p><%= @shop.address %> </p>
     </a>
   </div>
 </div>
 <br>
 <div class="d-flex mx-auto justify-content-between" style="width: 350px;" id="cards">
   <div class="d-flex flex-column">
-    <div class="p-2"> <h3 class=" d-flex mx-auto justify-content-center"id="description"> <%= @shop.description %>. </h3></div>
+    <div class="p-2">
+      <p class="shop-info d-flex mx-auto justify-content-center">
+        <%= @shop.description %>.
+      </p>
+    </div>
     <% if @shop.promotions.present? %>
     <div class="p-2">
-      <div class="d-flex mx-auto justify-content-center" id="promo-button"> <button href="" data-toggle="modal" data-target="#promo-pop" id="link"> <h2 class="d-flex mx-auto justify-content-center">See promotions!</h2>
-        </button>
+      <div class="d-flex mx-auto justify-content-center" id="promo-button">
+        <div href="" data-toggle="modal" data-target="#promo-pop" id="promo-link">
+          <p> See promotions!
+          </p>
+        </div>
       </div>
     </div>
     <% end %>
@@ -50,16 +57,22 @@
   <div class="mr-auto p-2">
     <h1 id="title">loyality card progress:</h1>
     <div class="d-flex justify-content-start">
-      <div id="shop-redeem-alert">Congratulation! You can redeem this card 🎉 </div>
+      <div id="shop-redeem-alert">
+        Congratulation! You can redeem this card 🎉
+      </div>
     </div>
   </div>
 </div>
 <% else %>
-<div class="d-flex mx-auto" style="width: 200px;" id="cardsnoshop">
-  <h3 class=" d-flex mx-auto justify-content-center"id="noshop"> "You don't have a loyality card, yet!" </h3>
+<div class="d-flex mx-auto" id="cardsnoshop">
+  <p class=" d-flex mx-auto justify-content-center "id="noshop">
+  "You don't have a loyality card, yet!"
+</p>
 </div>
 <% end %>
 <% end %>
+
+
 <div class="modal fade" id="promo-pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -83,6 +96,8 @@
     </div>
   </div>
 </div>
+
+
 <div class="modal fade" id="map-show-pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
