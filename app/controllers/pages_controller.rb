@@ -27,7 +27,7 @@ class PagesController < ApplicationController
   def add_stamp
     @scanned_user = User.find_by(token: params[:token])
     UpdateCardService.new(@scanned_user, current_user.shop, params[:card][:star_count]).call
-    redirect_to dashboard_path
+    redirect_to cards_path(params[:token])
   end
 
   def close
@@ -35,6 +35,7 @@ class PagesController < ApplicationController
     redirect_to dashboard_path if current_user.shop != @card.shop
     @card.update(status: "closed")
     authorize @card
+    redirect_to cards_path(@card.user.token)
   end
 
   private

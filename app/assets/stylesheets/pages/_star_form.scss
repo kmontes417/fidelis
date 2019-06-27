@@ -4,24 +4,12 @@
   margin: 10px;
 }
 
-#redeem {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 90px;
-  color: white
-}
-
-#redeem-btn a {
-  background-color: $green;
-  margin: 18px;
-  color: white;
-  padding: 15px;
-}
-
 
 .button-stamp {
   background-color: $green;
   color: white;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
 
@@ -41,4 +29,9 @@
   background: white;
   border-radius: 0 0 0 0;
   height: 100vh
+}
+
+.container-star-form {
+  background: white;
+  height: 100vh;
 }
