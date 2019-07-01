@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     redirect_to dashboard_path
-  end
+  end  
 
   def dashboard
     @user = current_user
